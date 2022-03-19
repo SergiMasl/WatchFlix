@@ -1,0 +1,12 @@
+<div class="contener">
+    <h1 class="text-center">All Post</h1>
+
+    <ul class="list-unstyled" *ngFor="let post of posts">
+        <li class="media">
+            <iframe width="942" height="530" [src]="transform(post.URL)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+         
+        </li>
+    </ul>
+    
+</div>
+
