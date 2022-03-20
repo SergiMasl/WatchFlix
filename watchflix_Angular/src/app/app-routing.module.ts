@@ -7,6 +7,7 @@ import { SingUpComponent } from './components/sing-up/sing-up.component';
 import { IndexComponent } from './components/index/index.component';
 import { HomeComponent } from './components/home/home/home.component';
 import { BrowesComponent } from './components/home/browes/browes.component';
+import { SignuppageComponent } from './components/signuppage/signuppage.component';
 
 
 const routes: Routes = [
@@ -15,8 +16,8 @@ const routes: Routes = [
   { path: 'signin', component: SingInComponent },
   { path: 'signup', component: SingUpComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'browes/:u_name', component: BrowesComponent }
-
+  { path: 'browes/:u_name', component: BrowesComponent },
+  { path: 'signup', component: SignuppageComponent }
 ];
 
 @NgModule({

@@ -1,1 +1,26 @@
 <app-nav-bar [display]="false" [displayLogoBack]="true" ></app-nav-bar>
+
+<div class="contener">
+    <h1>Unlimited movies, TV shows, and more.</h1>
+    <h3>Watch anywhere. Cancel anytime.</h3>
+    <h4>Ready to watch? Enter your email to create or restart your membership.</h4>
+    <div class="input_signUp">
+        
+        <form #signUp="ngForm" (submit)="onFormSignUp(signUp.value)">
+            <div class="form-group">
+                <label for="">Email address</label>
+                <input 
+                    type="text" 
+                    name="email" 
+                    class="form-control" 
+                    (ngModel) = "email" 
+                    #email="ngModel"
+                    [class.is-invalid]="email.touched && email.invalid"
+                    required
+                >
+                <small class="text-danger" [class.d-none]="email.untouched || email.valid">*This is required field</small>
+            </div>
+            <input [disabled]="signUp.invalid" type="submit" value="Get Sterted >" class="btn btn-primary">
+        </form>
+    </div>
+</div>

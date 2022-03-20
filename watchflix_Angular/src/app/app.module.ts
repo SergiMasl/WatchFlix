@@ -16,6 +16,8 @@ import { HomeComponent } from './components/home/home/home.component';
 import { BrowesComponent } from './components/home/browes/browes.component';
 import { PostComponent } from './components/home/post/post.component';
 import { CategoryComponent } from './components/home/category/category.component';
+import { SignUpComponent } from './components/forms/sign-up/sign-up.component';
+import { SignuppageComponent } from './components/signuppage/signuppage.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { CategoryComponent } from './components/home/category/category.component
     BrowesComponent,
     PostComponent,
     CategoryComponent,
+    SignUpComponent,
+    SignuppageComponent,
   ],
   imports: [
     BrowserModule,
