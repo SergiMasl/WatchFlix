@@ -8,6 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class NavBarComponent implements OnInit {
   
   @Input() display: boolean | undefined;
+  @Input() displayLogo: boolean | undefined;
+  @Input() displayLogoBack: boolean | undefined;
+  
 
   constructor() { }
 

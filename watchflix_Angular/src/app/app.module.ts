@@ -15,6 +15,7 @@ import { SignInFormComponent } from './components/forms/sign-in-form/sign-in-for
 import { HomeComponent } from './components/home/home/home.component';
 import { BrowesComponent } from './components/home/browes/browes.component';
 import { PostComponent } from './components/home/post/post.component';
+import { CategoryComponent } from './components/home/category/category.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { PostComponent } from './components/home/post/post.component';
     HomeComponent,
     BrowesComponent,
     PostComponent,
+    CategoryComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,10 @@
+<nav>
+ 
+    <div class="categiry_div">
+        <ul>
+            <li *ngFor="let e of catList">
+                <button type="button" (click)="choose(e.id)">{{e.label}}</button>
+            </li>
+        </ul>
+    </div>
+</nav>

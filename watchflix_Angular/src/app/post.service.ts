@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-type Movie = {
+export type Movie = {
   "title": string;
   "year": string;
   "isKids": boolean;
   "views": string;
   "descripshins": string;
   "URL": string;
+  "category": string;
 }
 
 @Injectable({

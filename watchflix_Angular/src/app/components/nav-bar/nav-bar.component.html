@@ -1,6 +1,7 @@
 <nav class="nav_login">
     <div class="logo">
-        <a href='/main'><img class="logo_img" src="#" alt="logo"></a>
+        <a href='/main' *ngIf="displayLogo"><img class="logo_img" src="#" alt="logo"></a>
+        <a href='home' *ngIf="displayLogoBack"><img class="logo_img" src="#" alt="logo"></a>
     </div>
     <div class="login_btns">
         <!-- <select>
