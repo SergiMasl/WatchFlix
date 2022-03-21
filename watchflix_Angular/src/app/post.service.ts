@@ -23,7 +23,7 @@ export class PostService {
 
   getPostVideoForAll(): Observable<moviesObj>{
     // return this.http.get<any[]>("../assets/allVideosAPI.json") 
-    return this.http.get<moviesObj>("http://localhost:8080/greeting") 
+    return this.http.get<moviesObj>("http://localhost:9000/greeting") 
    
 
   }
