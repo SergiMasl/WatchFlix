@@ -23,14 +23,17 @@ export class BrowesComponent implements OnInit {
   constructor(private postService: PostService, private sanitizer: DomSanitizer, private route: ActivatedRoute) { 
     this.sanitizer = sanitizer;
     this.postService.getPostVideoForAll().subscribe(data => {
+      const movieObj = data.content
+      const moviesList: Movie[] = JSON.parse(movieObj);
+
       if(this.isKids){
         this.filtredCategorys = this.catList.filter(cat => cat.isForKid == true)
-        this.allPosts = data.filter(e => e.isKids == true)
+        this.allPosts = moviesList.filter(e => e.isKids == true)
         this.filtredPosts = this.allPosts;
 
       } else {
         this.filtredCategorys = this.catList
-        this.allPosts = data
+        this.allPosts = moviesList
         this.filtredPosts = this.allPosts;
       } 
     })
@@ -54,5 +57,4 @@ export class BrowesComponent implements OnInit {
       this.filtredPosts = this.allPosts
     }
   }
-
 }

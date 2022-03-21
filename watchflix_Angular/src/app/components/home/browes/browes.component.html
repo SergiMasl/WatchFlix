@@ -1,16 +1,16 @@
 <app-nav-bar [display]="true" [displayLogoBack]="true"></app-nav-bar>
-<app-category
-        (choosed)="onChooseCategory($event)"
-        [catList]="filtredCategorys"
-></app-category>
 
 <div class="contener">
-    <h1 class="text-center">All Post</h1>
+
+    <app-category
+        (choosed)="onChooseCategory($event)"
+        [catList]="filtredCategorys"
+    ></app-category>
 
     <ul class="list-unstyled" *ngFor="let post of filtredPosts">
         <li class="media">
             <iframe width="942" height="530" [src]="transform(post.URL)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-         
+            <p></p>
         </li>
     </ul>
     

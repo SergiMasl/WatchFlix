@@ -12,6 +12,8 @@ export type Movie = {
   "category": string;
 }
 
+type moviesObj = {content: string};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,11 +21,14 @@ export class PostService {
 
   constructor(private http: HttpClient) { }
 
-  getPostVideoForAll(): Observable<Movie[]>{
-   return this.http.get<any[]>('../assets/allVideosAPI.json') 
+  getPostVideoForAll(): Observable<moviesObj>{
+    // return this.http.get<any[]>("../assets/allVideosAPI.json") 
+    return this.http.get<moviesObj>("http://localhost:8080/greeting") 
+   
+
   }
 
-  getPostVideoForKid(): Observable<any[]>{
-    return this.http.get<any[]>('https://jsonplaceholder.typicode.com/posts') 
-  }
+  // getPostVideoForKid(): Observable<any[]>{
+  //   return this.http.get<any[]>('https://jsonplaceholder.typicode.com/posts') 
+  // }
 }
