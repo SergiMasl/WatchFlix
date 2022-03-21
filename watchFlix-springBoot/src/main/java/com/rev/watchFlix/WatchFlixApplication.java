@@ -24,24 +24,4 @@ public class WatchFlixApplication {
 		return String.format("Hello %s!", name);
 	}
 
-
-
-	//********Email auto sender********
-
-	//Number gen
-	int min = 1000;
-	int max = 9999;
-	int b = (int)(Math.random()*(max-min+1)+min);
-	//
-	private String toMail ="maslinikovsergey@gmail.com";
-	private String toBodyTextMail = String.valueOf(b);
-
-	@Autowired
-	private EmailSenderService senderService;
-
-	@EventListener(ApplicationReadyEvent.class)
-	public  void sendMail(){
-		senderService.sendEmail(toMail, "This is subject", toBodyTextMail);
-	}
-	//******** THE END of Email auto sender********
 }
