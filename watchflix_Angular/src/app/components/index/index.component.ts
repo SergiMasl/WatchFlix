@@ -28,7 +28,7 @@ export class IndexComponent implements OnInit {
     this.email = data.email;
     console.log(this.email)
     this.postEmail();
-    // this.router.navigateByUrl('/signup');
+    this.router.navigateByUrl(`/signup?email=${this.email}`);
   }
 
 }

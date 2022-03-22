@@ -5,16 +5,14 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class SendEmailService {
+export class SignUpServiceService {
 
-  private baseURL = "http://localhost:9000/sendEmail";
+  private baseURL = "http://localhost:9000/signupuser";
 
   constructor(private httpClient: HttpClient) { }
 
-  postEmail(email: string):Observable<string>{
-    return this.httpClient.post<string>(`${this.baseURL}`, email)
+  singUpUser(user: {}):Observable<{}>{
+    return this.httpClient.post<{}>(`${this.baseURL}`, user)
     
   }
-
-}
-
+} 

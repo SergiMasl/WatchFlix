@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'main', component: IndexComponent },
   { path: 'signin', component: SingInComponent },
   { path: 'signup', component: SingUpComponent },
+  { path: 'signup/:email', component: SingUpComponent },
   { path: 'home', component: HomeComponent },
   { path: 'browes/:u_name', component: BrowesComponent },
   { path: 'signup', component: SignuppageComponent }
