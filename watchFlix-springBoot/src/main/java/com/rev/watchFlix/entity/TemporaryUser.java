@@ -19,10 +19,9 @@ public class TemporaryUser {
         @Id
         @GeneratedValue
         private int id;
-        @Column(name="securityNumber")
         private String securityNumber;
-        @Column(name="email")
         private String email;
+        private String isExist;
 
 }
 

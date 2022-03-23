@@ -5,15 +5,14 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class SignUpServiceService {
+export class VerificationNumService {
 
-  private baseURL = "http://localhost:9000/signupuser";
+  private baseURL = "http://localhost:9000/verifnum/:email";
 
   constructor(private httpClient: HttpClient) { }
 
-  singUpUser(user: {}):Observable<{}>{
+  verfSecNum(user: {}):Observable<{}>{
     return this.httpClient.post<{}>(`${this.baseURL}`, user)
     
   }
-} 
- 
+}

@@ -21,16 +21,25 @@
 
 .signIn_btn {
     border: none;
-    background-color: teal;
-    box-shadow:  4px -2px 4px 1px teal;
-    padding: 5px 48px;
+    background-color: #e50914;
+    padding: 7px 48px;
+    border-radius: 7px;
+    color: white;
+    size: 0px;
+    font-weight: 400;
+    font-family: sans-serif;
 }
 
 .signIn_btn:hover{
-    box-shadow: -2px 2px 4px 1px red;
-    background-color: red;
+    box-shadow: 0px 0px 9px 3px red;
+    text-decoration: none;
 }
 
 .login_btns {
     margin-right: 10px;
+}
+
+.logo_layout{
+    width: 100%;
+    background-image: url("/asses/Logo.svg");
 }

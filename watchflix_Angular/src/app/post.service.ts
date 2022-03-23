@@ -22,10 +22,7 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   getPostVideoForAll(): Observable<moviesObj>{
-    // return this.http.get<any[]>("../assets/allVideosAPI.json") 
     return this.http.get<moviesObj>("http://localhost:9000/greeting") 
-   
-
   }
 
   // getPostVideoForKid(): Observable<any[]>{

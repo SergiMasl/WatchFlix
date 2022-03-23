@@ -26,8 +26,10 @@ public class TempUserServiceImp implements TempUserService{
         TemporaryUser tempUser =  repository.findById(id).get();
         tempUser.setEmail(user.getEmail());
         tempUser.setSecurityNumber(user.getSecurityNumber());
+        tempUser.setIsExist(user.getIsExist());
         repository.save(tempUser);
     }
+
 
     @Override
     public void deleteEmployee(int id) {

@@ -1,29 +1,56 @@
 package com.rev.watchFlix.mailAuthoSender;
 
 import com.rev.watchFlix.entity.TemporaryUser;
+import com.rev.watchFlix.repository.TempUserRep;
 import com.rev.watchFlix.service.TempUserService;
-import com.rev.watchFlix.service.TempUserServiceImp;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
+
+@CrossOrigin(origins = "http://localhost:4200")
+@RestController
 public class CheckEmail {
 
-    @PostMapping("/sendEmail")
-    public boolean checkEmail(String secNum, String emailForSend){
-        System.out.println("Record Temp User in Database");
+    @Autowired
+    private TempUserRep rep;
 
 
+    @PostMapping("verifnum/:email")
+    public TemporaryUser postBody(@RequestBody TemporaryUser objOfReq) {
+        //step 1. is num && email correct?
 
-//        TemporaryUser userForRec = new TemporaryUser();
-//        userForRec.setEmail(emailForSend);
-//        userForRec.setSecurityNumber(secNum);
-//
-//        System.out.println(userForRec.getEmail());
-//        System.out.println(userForRec.getSecurityNumber());
+        checkVerfNumAndEmail(objOfReq.getEmail(), objOfReq.getSecurityNumber());
 
-//        TempUserServiceImp ff = new TempUserServiceImp();
-//        ff.addEmployee(userForRec);
+        return objOfReq;
+    }
 
 
-        return false;
+    //Step 1 ->
+    @Autowired
+    private TempUserService tempUserService;
+    public void checkVerfNumAndEmail(String email, String security_number) {
+        String numVer = rep.checkVerfNumAndEmail(email, security_number);
+        System.out.println("email: " + email);
+        System.out.println("security_number: " + security_number);
+        System.out.println("START: " + numVer);
+        if(numVer == null) {
+            //return false
+            System.out.println("Frong number");
+        } else {
+            //return true
+            System.out.println("Success");
+
+            String[] arrOfStr = numVer.split(",");
+            TemporaryUser tt = new TemporaryUser();
+            tt.setEmail(email);
+            tt.setIsExist("true");
+            tt.setSecurityNumber(security_number);
+            tempUserService.updateEmployee(Integer.parseInt(arrOfStr[0]),tt);
+        }
+
+
     }
 }

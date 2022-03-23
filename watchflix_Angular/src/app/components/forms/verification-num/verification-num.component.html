@@ -1,0 +1,20 @@
+<p>verification-num works!</p>
+
+<form #verfNumForm="ngForm" (submit)="onFormSubmit(verfNumForm.value)">
+    {{verificationObj.email}}
+    <div class="form-group" >
+      <label for="">Number</label>
+      <input
+        type="text"
+        name="securityNumber"
+        class="form-control"
+        [(ngModel)]="verificationObj.securityNumber"
+        #securityNumber="ngModel"
+        [class.is-invalid]="securityNumber.invalid && securityNumber.touched"
+        required
+      />
+      <small class="text-danger" [class.d-none]="securityNumber.untouched || securityNumber.valid">*This is required field</small>
+    </div>
+
+    <input [disabled]="verfNumForm.invalid" type="submit" value="Submit" class="btn btn-primary" />
+</form>

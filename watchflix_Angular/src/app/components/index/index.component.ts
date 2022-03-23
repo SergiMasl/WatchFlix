@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SendEmailService } from 'src/app/send-email.service';
+import { GetProfileService } from 'src/app/service/get-profile.service';
 
 @Component({
   selector: 'app-index',
@@ -11,24 +12,30 @@ import { SendEmailService } from 'src/app/send-email.service';
 export class IndexComponent implements OnInit {
 
   email!: string;
-  constructor(private router: Router, private emailService: SendEmailService) { }
+  constructor(private router: Router, private emailService: SendEmailService, private getProfile: GetProfileService) { }
 
   ngOnInit(): void {
-  }
-
-  postEmail(){
-    this.emailService.postEmail(this.email).subscribe(data=>this.goHome)
   }
   
   goHome(){
     this.router.navigate(['/main'])
   }
 
+
   onFormSignUp(data: any){
     this.email = data.email;
-    console.log(this.email)
-    this.postEmail();
-    this.router.navigateByUrl(`/signup?email=${this.email}`);
+    this.emailService.postEmail(this.email).subscribe(resp => {
+      this.goNext(resp);
+    });
   }
 
+  onFormgetProfile(){
+    this.getProfile.getProfileUser("user1").subscribe(data=> this.router.navigate(['/getprofileuser']))
+  }
+
+  goNext(resp: string){
+    this.router.navigateByUrl(`/verPage?email=${this.email}&status=${resp}`)
+  }
+
+  
 }

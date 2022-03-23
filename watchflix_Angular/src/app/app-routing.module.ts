@@ -7,7 +7,9 @@ import { SingUpComponent } from './components/sing-up/sing-up.component';
 import { IndexComponent } from './components/index/index.component';
 import { HomeComponent } from './components/home/home/home.component';
 import { BrowesComponent } from './components/home/browes/browes.component';
-import { SignuppageComponent } from './components/signuppage/signuppage.component';
+import { ProfileComponent } from './components/forms/profile/profile.component';
+import { VerificationNumComponent } from './components/forms/verification-num/verification-num.component';
+import { VerificationPageComponent } from './components/verification-page/verification-page.component';
 
 
 const routes: Routes = [
@@ -18,7 +20,13 @@ const routes: Routes = [
   { path: 'signup/:email', component: SingUpComponent },
   { path: 'home', component: HomeComponent },
   { path: 'browes/:u_name', component: BrowesComponent },
-  { path: 'signup', component: SignuppageComponent }
+  { path: 'getprofileuser', component: ProfileComponent },
+  { path: 'verification', component: VerificationNumComponent },
+  { path: 'verification/:email', component: VerificationNumComponent },
+  { path: 'verPage', component: VerificationPageComponent },
+  // { path: 'verPage/:email', component: VerificationPageComponent }
+
+
 ];
 
 @NgModule({

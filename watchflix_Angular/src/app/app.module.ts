@@ -17,7 +17,11 @@ import { BrowesComponent } from './components/home/browes/browes.component';
 import { PostComponent } from './components/home/post/post.component';
 import { CategoryComponent } from './components/home/category/category.component';
 import { SignUpComponent } from './components/forms/sign-up/sign-up.component';
-import { SignuppageComponent } from './components/signuppage/signuppage.component';
+import { ProfileComponent } from './components/forms/profile/profile.component';
+import { VerificationNumComponent } from './components/forms/verification-num/verification-num.component';
+import { VerificationPageComponent } from './components/verification-page/verification-page.component';
+import { ErrorVerificationEmailComponent } from './components/forms/error-verification-email/error-verification-email.component';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +37,10 @@ import { SignuppageComponent } from './components/signuppage/signuppage.componen
     PostComponent,
     CategoryComponent,
     SignUpComponent,
-    SignuppageComponent,
+    ProfileComponent,
+    VerificationNumComponent,
+    VerificationPageComponent,
+    ErrorVerificationEmailComponent,
   ],
   imports: [
     BrowserModule,

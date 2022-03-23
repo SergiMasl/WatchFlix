@@ -32,7 +32,7 @@ export class SignUpComponent implements OnInit {
 
   onFormSubmit(data: any){
     this.signUpUser();
-    // this.router.navigateByUrl(`/signup?email=${this.email}`);
+    this.router.navigateByUrl(`/signup?email=${this.email}`);
     
   }
 

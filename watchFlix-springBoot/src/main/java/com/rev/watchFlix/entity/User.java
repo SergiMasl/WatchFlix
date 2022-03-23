@@ -1,9 +1,6 @@
 package com.rev.watchFlix.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.Column;
@@ -11,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -33,6 +31,5 @@ public class User {
     @Column(name="subscribe")
     public boolean subscribe;
     @Column(name="isActive")
-    @Value("false")
     public boolean isActive;
 }
