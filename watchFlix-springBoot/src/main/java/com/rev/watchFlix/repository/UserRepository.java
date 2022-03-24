@@ -32,13 +32,11 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     )
     User getUserByUName(String username);
 
-
-
     @Query(
             value= "UPDATE User SET country=?2 name=?3 mobile=?4 WHERE s.username=?1",
             nativeQuery = true
     )
-    User updateUser(String username,String country, String name, String mobile);
+    User updateUser(String username, String country, String name, String mobile);
 
 }
 
