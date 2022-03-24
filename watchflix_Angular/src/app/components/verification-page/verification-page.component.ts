@@ -16,6 +16,8 @@ export class VerificationPageComponent implements OnInit {
       this.dataObj.email = params['email']; 
       this.dataObj.errorStatus = params['status']; 
     });
+    
+
   }
   
 

@@ -19,13 +19,23 @@ export class VerificationNumComponent implements OnInit {
     });
   }
 
-  goNext(){
-    this.router.navigateByUrl(`/signup?email=${this.verificationObj.email}`);
+  onFormSubmit(data: any){
+    this.verfNumSec.verfSecNum(this.verificationObj).subscribe(resp => {
+      this.checking(resp);
+    });
   }
 
-  onFormSubmit(data: any){
-    console.log(this.verificationObj)
-    this.verfNumSec.verfSecNum(this.verificationObj).subscribe(data => this.goNext())
+  goNextPage(resp: {}){
+    this.router.navigateByUrl(`/signup?email=${this.verificationObj.email}&status=${resp}`)
+  } 
+
+  checking(resp: {}){
+    if(resp == "409"){
+      alert("Code is not matche... try one more time!")
+      this.router.navigateByUrl(`/verPage?email=${this.verificationObj.email}&status=200`)
+    } else {
+      this.goNextPage(resp);
+    }
   }
 
 }

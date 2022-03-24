@@ -25,7 +25,7 @@ export class IndexComponent implements OnInit {
   onFormSignUp(data: any){
     this.email = data.email;
     this.emailService.postEmail(this.email).subscribe(resp => {
-      this.goNext(resp);
+      this.checking(resp)
     });
   }
 
@@ -35,7 +35,15 @@ export class IndexComponent implements OnInit {
 
   goNext(resp: string){
     this.router.navigateByUrl(`/verPage?email=${this.email}&status=${resp}`)
-  }
+  } 
 
-  
+  checking(resp: string){
+    if(resp == "408"){
+      alert("Email is already used... try other")
+      this.router.navigateByUrl(`/main`)
+    } else {
+      this.goNext(resp);
+    }
+  }
 }
+ 

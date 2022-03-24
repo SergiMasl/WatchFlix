@@ -14,5 +14,11 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     )
     String getStudentFNAmeByEmail(String username);
 
+    @Query(
+            value= "SELECT * FROM User s where s.mobile = ?1",
+            nativeQuery = true
+    )
+    String getStudentFNAmeByPhone(String phone);
+
 }
 

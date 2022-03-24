@@ -1,1 +1,2 @@
-<app-sign-up></app-sign-up>
+<app-sign-up *ngIf="dataObj.errorStatus == '200'"></app-sign-up>
+<!-- <app-error-verification-email *ngIf="dataObj.errorStatus == '409'" ></app-error-verification-email> -->

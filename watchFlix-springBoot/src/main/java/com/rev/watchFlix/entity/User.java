@@ -3,10 +3,7 @@ package com.rev.watchFlix.entity;
 import lombok.*;
 import org.springframework.beans.factory.annotation.Value;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Builder
 @NoArgsConstructor
@@ -18,11 +15,11 @@ public class User {
     @Id
     @GeneratedValue
     private int id;
-    @Column(name="username")
+    @Column(name="username", unique=true)
     public String username;
-    @Column(name="email")
+    @Column(name="email", unique=true)
     public String email;
-    @Column(name="mobile")
+    @Column(name="mobile", unique=true)
     public String mobile;
     @Column(name="country")
     public String country;

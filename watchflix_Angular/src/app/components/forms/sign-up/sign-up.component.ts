@@ -11,6 +11,7 @@ import { User } from 'src/app/User';
 export class SignUpComponent implements OnInit {
   countries = ['USA', 'China', 'UAE', 'Japan']
   email = "";
+  status= "";
   userModel  = new User('', this.email, 1, '', '', false)
 
   constructor(private route: ActivatedRoute, private router: Router, private signUpServis: SignUpServiceService) { }
@@ -20,20 +21,20 @@ export class SignUpComponent implements OnInit {
       this.userModel.email = params['email']; 
     });
   }
-
-  signUpUser(){
-    this.signUpServis.singUpUser(this.userModel).subscribe(data => this.goHome())
-    }
-
-
-  goHome(){
-    this.router.navigate(['/main'])
-  }
-
   onFormSubmit(data: any){
-    this.signUpUser();
-    this.router.navigateByUrl(`/signup?email=${this.email}`);
-    
+    this.signUpServis.singUpUser(this.userModel).subscribe(resp => {
+      this.checking(resp);
+    })
   }
 
-}
+  checking(resp: {}){
+    if(resp == "200"){
+          alert("Sign Up Success")
+          this.router.navigateByUrl(`/main`)
+        } else {
+          alert("Username or phone already used... try other")
+          this.router.navigateByUrl(`/signup?email=${this.userModel.email}&status=200`)
+        }
+      }
+
+} 
