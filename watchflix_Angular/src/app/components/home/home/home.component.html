@@ -1,9 +1,12 @@
+<app-nav-bar-home></app-nav-bar-home>
 <app-nav-bar [display]="true" [displayLogoBack]="true"></app-nav-bar>
 
 <div class="contener">
     <button  (click)="onClickAdult()">{{user.u_name}}</button>
     <hr>
-    <!-- <a [routeLink]="['/browes', [user.u_name], {isKids: true}]" alt="kid_user">Kids</a> -->
+    <a href="browes/{{user.u_name}}?isKids=true" alt="kid_user">For kids</a>
+    <hr>
+    <a href="getprofileuser" alt="kid_user">Profile</a>
 
 </div>
 <!-- <a [routerLink]="['/hero', hero.id]">

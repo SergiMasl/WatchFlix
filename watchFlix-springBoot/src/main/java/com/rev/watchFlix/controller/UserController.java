@@ -95,4 +95,37 @@ public class UserController {
     }
 
 
+    //View profile
+    //set 1. get {} from front
+    @PostMapping("/viewprof")
+    public User viewProf(@RequestBody User user){
+        User hero;
+        if(user == null){
+            hero = null;
+        } else {
+            //step 2. check user by username & pass
+            hero = checkinUser.getUserByUName(user.getUsername());
+            System.out.println(hero);
+        }
+        //step 3. req user
+        return hero;
+    }
+
+    //Update Profile
+    @PostMapping("/updateprof")
+    public User updateProf(@RequestBody User user){
+        System.out.println(user);
+        System.out.println(user.getUsername() + " "+ user.getCountry());
+        User hero =null;
+        if(user == null){
+            hero = null;
+        } else {
+            //step 2. check user by username & pass
+            System.out.println("************");
+            hero = checkinUser.updateUser(user.getUsername(), user.getCountry(), user.getName(), user.getMobile());
+            System.out.println(hero);
+        }
+        //step 3. req user
+        return hero;
+    }
 }

@@ -31,4 +31,6 @@ public class User {
     public boolean isActive;
     @Column(name = "password")
     public String password;
+    @Column(name = "name")
+    public String name;
 }

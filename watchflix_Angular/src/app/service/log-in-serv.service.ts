@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { LocalUser } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,8 @@ export class LogInServService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getLogIn(user: {}):Observable<{}>{
-    return this.httpClient.post<{}>(`${this.baseURL}`, user)
+  getLogIn(user: {}):Observable<LocalUser>{
+    return this.httpClient.post<LocalUser>(`${this.baseURL}`, user)
   }
 }
  

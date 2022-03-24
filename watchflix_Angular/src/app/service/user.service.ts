@@ -1,22 +1,12 @@
-
-
-// //ADD MORE TYPEs
-// export type User = {
-//   name: string;
-//   email: string;
-// }
-
-import { User } from "../User";
-import { Injectable } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
  
-// export type Hero = {
-//   //ADD MORE!!!!!
-//   email: string;
-//   username: string;
-//   name: string;
-//   phone: string;
-// }
+export type LocalUser = {
+  //ADD MORE!!!!!
+  
+  email: string;
+  username: string;
+  name: string;
+  mobile: string;
+}
  
 
 
@@ -25,13 +15,12 @@ export class UserService {
   constructor() {}
   
   get getHero(){
-    return 
+     return {
+      "username": localStorage.getItem("username")
+     }
   }
 
-  // setHero(hero: Hero){
-  //   localStorage.setItem("email", "hero.email")
-  //   localStorage.setItem("username", "hero.username")
-  //   localStorage.setItem("name", "hero.name")
-  //   localStorage.setItem("phone", "hero.phone")
-  // }
-}
+  setHero(hero: LocalUser){
+    localStorage.setItem("username", `${hero.username}`)
+  }
+} 

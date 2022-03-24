@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/service/user.service'; 
 import { LogInServService } from 'src/app/service/log-in-serv.service'; 
+import { LocalUser } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-sign-in-form',
@@ -25,21 +26,21 @@ export class SignInFormComponent implements OnInit {
     //1. send {} and get req from backeng
     this.hero.username = data.username;
     this.hero.password = data.password;
-    console.log(this.hero)
-    this.logIn.getLogIn(this.hero).subscribe(resp => this.checking(resp));
+    this.logIn.getLogIn(this.hero).subscribe((resp:LocalUser) => this.checking(resp));
   }
 
-  checking(resp: {}){
-    console.log(resp)
+  goNextPage() {
+    this.router.navigateByUrl('/home');
+  }
+
+  checking(resp: LocalUser){
     if(resp == null){
       alert("Password or user name are wrong, try one more time!")
       this.router.navigateByUrl(`/signin`)
     } else {
       //2. add hero to
-    
-    // this.userServ.setHero()
-
-      this.router.navigateByUrl('/home');
+    this.userServ.setHero(resp)
+     this.goNextPage();
     }
   }
 }

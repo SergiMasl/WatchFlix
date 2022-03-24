@@ -7,7 +7,7 @@ import { SingUpComponent } from './components/sing-up/sing-up.component';
 import { IndexComponent } from './components/index/index.component';
 import { HomeComponent } from './components/home/home/home.component';
 import { BrowesComponent } from './components/home/browes/browes.component';
-import { ProfileComponent } from './components/forms/profile/profile.component';
+import { ProfileComponent } from './components/forms/profile/profiles/profile.component';
 import { VerificationNumComponent } from './components/forms/verification-num/verification-num.component';
 import { VerificationPageComponent } from './components/verification-page/verification-page.component';
 

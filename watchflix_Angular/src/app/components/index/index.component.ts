@@ -10,11 +10,15 @@ import { GetProfileService } from 'src/app/service/get-profile.service';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-
   email!: string;
   constructor(private router: Router, private emailService: SendEmailService, private getProfile: GetProfileService) { }
 
   ngOnInit(): void {
+    if(localStorage.getItem('username')){
+      this.router.navigateByUrl(`/home`)
+
+    }
+    
   }
   
   goHome(){

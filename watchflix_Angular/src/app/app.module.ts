@@ -17,10 +17,13 @@ import { BrowesComponent } from './components/home/browes/browes.component';
 import { PostComponent } from './components/home/post/post.component';
 import { CategoryComponent } from './components/home/category/category.component';
 import { SignUpComponent } from './components/forms/sign-up/sign-up.component';
-import { ProfileComponent } from './components/forms/profile/profile.component';
+import { ProfileComponent } from './components/forms/profile/profiles/profile.component';
 import { VerificationNumComponent } from './components/forms/verification-num/verification-num.component';
 import { VerificationPageComponent } from './components/verification-page/verification-page.component';
 import { ErrorVerificationEmailComponent } from './components/forms/error-verification-email/error-verification-email.component';
+import { ViewProfileComponent } from './components/forms/profile/view-profile/view-profile.component';
+import { UpdateProfileComponent } from './components/forms/profile/update-profile/update-profile.component';
+import { NavBarHomeComponent } from './components/home/nav-bar-home/nav-bar-home.component';
 
 
 @NgModule({
@@ -41,6 +44,9 @@ import { ErrorVerificationEmailComponent } from './components/forms/error-verifi
     VerificationNumComponent,
     VerificationPageComponent,
     ErrorVerificationEmailComponent,
+    ViewProfileComponent,
+    UpdateProfileComponent,
+    NavBarHomeComponent,
   ],
   imports: [
     BrowserModule,

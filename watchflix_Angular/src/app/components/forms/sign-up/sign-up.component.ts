@@ -12,7 +12,7 @@ export class SignUpComponent implements OnInit {
   countries = ['USA', 'China', 'UAE', 'Japan']
   email = "";
   status= "";
-  userModel  = new User('', this.email, 1, '', '', false, '')
+  userModel  = new User('', this.email, "", '', '', false, '', false, "")
 
   constructor(private route: ActivatedRoute, private router: Router, private signUpServis: SignUpServiceService) { }
 
