@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from 'src/app/service/user.service';
 import { Movie, PostService } from '../../../post.service';
  
 
 @Component({
   selector: 'app-browes',
   templateUrl: './browes.component.html',
-  styleUrls: ['./browes.component.css']
+  styleUrls: ['./browes.component.css'],
+  providers: [UserService]
 })
 export class BrowesComponent implements OnInit {
   isKids = false
@@ -20,7 +22,10 @@ export class BrowesComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
-  constructor(private postService: PostService, private sanitizer: DomSanitizer, private route: ActivatedRoute) { 
+  constructor(private postService: PostService, private sanitizer: DomSanitizer, private route: ActivatedRoute , private userServ: UserService) { 
+    // this.userServ.loadAll;
+  
+    
     this.sanitizer = sanitizer;
     this.postService.getPostVideoForAll().subscribe(data => {
       const movieObj = data.content

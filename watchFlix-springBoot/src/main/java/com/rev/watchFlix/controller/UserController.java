@@ -19,15 +19,15 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/signupuser")
-    public List<User> getAllUsers(){
-        return userService.getAllUsers();
-    }
+//    @GetMapping("/signupuser")
+//    public List<User> getAllUsers(){
+//        return userService.getAllUsers();
+//    }
 
-    @GetMapping("/signupuser/{id}")
-    public User getUserById(@PathVariable("id") int id){
-        return userService.getUserById(id);
-    }
+//    @GetMapping("/signupuser/{id}")
+//    public User getUserById(@PathVariable("id") int id){
+//        return userService.getUserById(id);
+//    }
 
 
     //ADD USER
@@ -77,6 +77,22 @@ public class UserController {
         return "record deleted successfully";
     }
 
+
+    //Log In
+    //set 1. get {} from front
+    @PostMapping("/loginuser")
+    public User logIn(@RequestBody User user){
+        User hero;
+        if(user == null){
+            hero = null;
+        } else {
+            //step 2. check user by username & pass
+            hero = checkinUser.getUserByUNameAndPass(user.getUsername(), user.password);
+            System.out.println(hero);
+        }
+        //step 3. req user
+        return hero;
+    }
 
 
 }

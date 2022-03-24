@@ -20,5 +20,12 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     )
     String getStudentFNAmeByPhone(String phone);
 
+    @Query(
+            value= "SELECT * FROM User s where s.username = ?1 and s.password = ?2",
+            nativeQuery = true
+    )
+    User getUserByUNameAndPass(String username, String password);
+
+
 }
 

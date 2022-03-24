@@ -5,6 +5,7 @@ export class User{
         public mobile: number,
         public country: string,
         public gender: string,
-        public subscribe: boolean
+        public subscribe: boolean,
+        public password: string
     ){}
 }

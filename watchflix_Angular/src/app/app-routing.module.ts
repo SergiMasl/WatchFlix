@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'signup', component: SingUpComponent },
   { path: 'signup/:email', component: SingUpComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'browes', component: BrowesComponent },
   { path: 'browes/:u_name', component: BrowesComponent },
   { path: 'getprofileuser', component: ProfileComponent },
   { path: 'verification', component: VerificationNumComponent },
