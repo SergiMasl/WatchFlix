@@ -1,12 +1,33 @@
-<p></p>
 
-{{profObj.username}}
-{{profObj.email}}
-{{profObj.mobile}}
-{{profObj.country}}
-{{profObj.gender}}
-{{profObj.is_active}}
-{{profObj.name}}
 
-<button (click)="UpdateProfile()">Update profile</button>
-<button (click)="goBack()">Go back</button>
+<div class="wrapper">
+    <div class="cont_prof">
+        <h1 class="view_prof_h">My profile</h1>
+        <div class="prof_cont">
+            <p class="view_prof_inp prof_lable">User name</p>
+            <p class="view_prof_inp">{{profObj.username}}</p>
+        </div>
+        <div class="prof_cont">
+            <p class="view_prof_inp prof_lable">Name</p>
+        <p class="view_prof_inp">{{profObj.name}}</p> 
+        </div>
+        <div class="prof_cont">
+            <p class="view_prof_inp prof_lable">Phone</p>
+            <p class="view_prof_inp">{{profObj.mobile}}</p> 
+        </div>
+        <div class="prof_cont">
+            <p class="view_prof_inp prof_lable">Country</p>
+            <p class="view_prof_inp">{{profObj.country}}</p> 
+        </div>
+        <div class="prof_cont">
+            <p class="view_prof_inp prof_lable">Gender</p> 
+            <p class="view_prof_inp">{{profObj.gender}}</p> 
+        </div>
+
+      
+        <button (click)="UpdateProfile()" class="btn-EmailSub">Update profile</button>
+    </div>
+</div>
+
+
+

@@ -24,6 +24,7 @@ import { ErrorVerificationEmailComponent } from './components/forms/error-verifi
 import { ViewProfileComponent } from './components/forms/profile/view-profile/view-profile.component';
 import { UpdateProfileComponent } from './components/forms/profile/update-profile/update-profile.component';
 import { NavBarHomeComponent } from './components/home/nav-bar-home/nav-bar-home.component';
+import { SingleVideoComponent } from './components/home/single-video/single-video.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { NavBarHomeComponent } from './components/home/nav-bar-home/nav-bar-home
     ViewProfileComponent,
     UpdateProfileComponent,
     NavBarHomeComponent,
+    SingleVideoComponent,
   ],
   imports: [
     BrowserModule,

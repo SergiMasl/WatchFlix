@@ -43,3 +43,7 @@
     width: 100%;
     background-image: url("/asses/Logo.svg");
 }
+
+.nav_btm {
+    border-bottom:1px solid #33333359
+}

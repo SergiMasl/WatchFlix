@@ -1,14 +1,27 @@
-<app-nav-bar-home></app-nav-bar-home>
-<app-nav-bar [display]="true" [displayLogoBack]="true"></app-nav-bar>
+<div class="rpof_con">
+    <app-nav-bar-home></app-nav-bar-home>
 
-<div class="contener">
-    <button  (click)="onClickAdult()">{{user.u_name}}</button>
-    <hr>
-    <a href="browes/{{user.u_name}}?isKids=true" alt="kid_user">For kids</a>
-    <hr>
-    <a href="getprofileuser" alt="kid_user">Profile</a>
-
+    <div class="container wrap">
+        <div class="wrapper">
+            <h1 class="prof-lab">Who's watching?</h1>
+            <div class="list_prof">
+                <div class="user_prof">
+                    <button  class="prof_btn" (click)="onClickAdult()">
+                        <img class="btn_img" src="https://th.bing.com/th/id/OIP.uo07SG5VctO1rquYFT0BPwHaNK?pid=ImgDet&rs=1">
+                    </button>
+                    <p>{{user.u_name}}</p>
+                </div>
+                <div class="user_prof">
+                    <button class="prof_btn" (click)="onClickKid()">
+                        <img class="btn_img" src="https://images-na.ssl-images-amazon.com/images/I/51FpTmf6huL._SY300_QL70_.jpg">
+                    </button>
+                    <p>For kids</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="prof_link_wrap">
+        <a href="getprofileuser" alt="kid_user">Manage profiles</a>
+    </div>
 </div>
-<!-- <a [routerLink]="['/hero', hero.id]">
-    <span class="badge">{{ hero.id }}</span>{{ hero.name }}
-  </a> -->
+

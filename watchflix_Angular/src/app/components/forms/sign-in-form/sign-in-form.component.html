@@ -1,7 +1,12 @@
-<form #singIn="ngForm" (submit)="onFormSubmit(singIn.value)">
 
+<div class="wrapper">
+
+<form #singIn="ngForm" (submit)="onFormSubmit(singIn.value)" class="login-form">
+    <h1>Sign In</h1>
+    
+    
     <div class="form-group">
-        <label for="">Username</label>
+        <label class="lable" for="">Username</label>
         <input 
             type="text" 
             name="username" 
@@ -15,7 +20,7 @@
     </div>
 
     <div class="form-group">
-        <label for="">Password</label>
+        <label class="lable" for="">Password</label>
         <input 
             type="text" 
             name="password" 
@@ -44,9 +49,7 @@
         <small class="text-danger" [class.d-none]="subscribe.valid">*This is required field</small>
     </div>
     
-    <input [disabled]="singIn.invalid" type="submit" value="Register" class="btn btn-primary">
+    <input [disabled]="singIn.invalid" type="submit" value="Register" class="btn btn-primary" class="btn-EmailSub">
 </form>
 
-<div class="contener">
-    <a href="main">Sign Up</a>
 </div>

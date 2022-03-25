@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/service/user.service';
 import { Movie, PostService } from '../../../post.service';
@@ -18,15 +17,9 @@ export class BrowesComponent implements OnInit {
   catList = [{id:"All", label: "All Movies", isForKid: true},{id:"cartoon", label: "Cartoons", isForKid: true},{id:"horror", label: "Horror Movies", isForKid: false}, {id:"history", label: "History Movies", isForKid: false}, {id:"comedy", label: "Comedy Movies", isForKid: true}, {id:"fantasy", label: "Fantasy Movies", isForKid: true}, {id:"My List", label: "My List", isForKid: true}];
   filtredCategorys: any[] = [];
 
-  transform(url: string) {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
-  }
-
-  constructor(private postService: PostService, private sanitizer: DomSanitizer, private route: ActivatedRoute , private userServ: UserService) { 
+  constructor(private postService: PostService,  private router: Router, private route: ActivatedRoute , private userServ: UserService) { 
     // this.userServ.loadAll;
   
-    
-    this.sanitizer = sanitizer;
     this.postService.getPostVideoForAll().subscribe(data => {
       const movieObj = data.content
       const moviesList: Movie[] = JSON.parse(movieObj);
@@ -62,4 +55,9 @@ export class BrowesComponent implements OnInit {
       this.filtredPosts = this.allPosts
     }
   }
+
+  goBack(){
+    this.router.navigateByUrl(`/home`)
+  }
+
 }

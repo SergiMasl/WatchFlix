@@ -1,20 +1,30 @@
-<p>verification-num works!</p>
+<app-nav-bar [display]="true" [displayLogo]="true" [displayLogoBack]="false"></app-nav-bar>
 
-<form #verfNumForm="ngForm" (submit)="onFormSubmit(verfNumForm.value)">
-    {{verificationObj.email}}
-    <div class="form-group" >
-      <label for="">Number</label>
-      <input
-        type="text"
-        name="securityNumber"
-        class="form-control"
-        [(ngModel)]="verificationObj.securityNumber"
-        #securityNumber="ngModel"
-        [class.is-invalid]="securityNumber.invalid && securityNumber.touched"
-        required
-      />
-      <small class="text-danger" [class.d-none]="securityNumber.untouched || securityNumber.valid">*This is required field</small>
-    </div>
+<div class="container wrapper">
+  
+  <div class="stepHeader">
+    <p class="steps_signUp">Step <b>1</b> of <b>3</b></p>
+    <h1 class="stepTitle">Verify your email</h1>
+    <p class="contextRow">Just a few more steps and you're done!</p>
+    <p class="contextRow">We hate paperwork, too.</p>
+  </div>
 
-    <input [disabled]="verfNumForm.invalid" type="submit" value="Submit" class="btn btn-primary" />
-</form> 
+  <form #verfNumForm="ngForm" (submit)="onFormSubmit(verfNumForm.value)"  class="stepEmai1">
+      <div class="emailOutput">
+        <p><b>{{verificationObj.email}}</b></p>
+      </div>
+      <div class="form-group" >
+        <input
+          type="text"
+          name="securityNumber"
+          class="formControl"
+          [(ngModel)]="verificationObj.securityNumber"
+          #securityNumber="ngModel"
+          [class.is-invalid]="securityNumber.invalid && securityNumber.touched"
+          required
+        />
+      </div>
+
+      <input [disabled]="verfNumForm.invalid" type="submit" value="Submit" class="btn-EmailSub" />
+  </form> 
+</div>

@@ -1,3 +1,36 @@
+.layout_brow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.767), rgba(0, 0, 0, 0.829)), url('/assets/MOVIEPIC.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: scroll;
+}
+
 .video_text{
     width: 300px;
+}
+
+.list-unstyled {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.goBack{
+    background: transparent;
+    padding: 10px 25px;
+    margin-top: 10px;
+    margin-left: 15px;
+    color: white;
+    border: 1px solid white;
+}
+
+.goBack:hover{
+    color: rgb(223, 78, 78);;
+    border: 1px solid rgb(223, 78, 78);
 }

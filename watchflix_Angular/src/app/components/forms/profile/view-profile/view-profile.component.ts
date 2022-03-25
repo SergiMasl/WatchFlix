@@ -45,8 +45,4 @@ export class ViewProfileComponent implements OnInit {
   UpdateProfile(){
     this.router.navigateByUrl(`/getprofileuser?status=update`)
   }
-
-  goBack(){
-    this.router.navigateByUrl(`/home`)
-  }
 }

@@ -1,18 +1,20 @@
-<app-nav-bar-home></app-nav-bar-home>
+<div class="layout_brow">
+  
+    <app-nav-bar-home></app-nav-bar-home>
+    <button (click)="goBack()" class="goBack">Go back</button>
+    <div class="contener">
 
-<div class="contener">
+        <app-category
+            (choosed)="onChooseCategory($event)"
+            [catList]="filtredCategorys"
+        ></app-category>
 
-    <app-category
-        (choosed)="onChooseCategory($event)"
-        [catList]="filtredCategorys"
-    ></app-category>
+        <ul class="list-unstyled">
+            <app-single-video *ngFor="let post of filtredPosts" [post]="post"></app-single-video>
+        </ul>
+        
+    </div>
 
-    <ul class="list-unstyled" *ngFor="let post of filtredPosts">
-        <li class="media">
-            <iframe width="942" height="530" [src]="transform(post.URL)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <p></p>
-        </li>
-    </ul>
-    
 </div>
+
 

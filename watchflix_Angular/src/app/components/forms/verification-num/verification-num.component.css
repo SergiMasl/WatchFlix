@@ -1,0 +1,65 @@
+.stepHeader {
+    text-align: left;
+    max-width: 440px;
+    margin: 0 auto;
+}
+
+.steps_signUp {
+    text-align: inherit;
+    font-size: 13px;
+}
+
+.stepTitle {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 32px;
+
+}
+
+.contextRow {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 18px;
+}
+
+.stepEmai1{
+    margin-top: 10px;
+    max-width: 440px;
+    margin: 0 auto;
+}
+
+.formControl {
+    border-radius: 0px;
+    border: 1px solid rgba(0, 0, 0, 0.521);
+    padding: 10px;
+    width: 100%;
+    font-size: 20px;
+    color: #000;
+}
+
+.btn-EmailSub {
+    font-size: 1.875rem;
+    min-height: 70px;
+    color: #fff;
+    background-color: #e50914;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 25%);
+    width: 100%;
+}
+
+.btn-EmailSub:hover{
+    box-shadow: 0px 0px 9px 3px red;
+}
+
+.emailOutput{
+    margin: 15px 0px;
+    padding: 10px 10px 0;
+    border: 1px solid rgba(0, 0, 0, 0.521);
+}
+
+.nav_btm {
+    border-bottom: 1px solid black;
+}
+
+.wrapper {
+    margin-top: 40px;
+}

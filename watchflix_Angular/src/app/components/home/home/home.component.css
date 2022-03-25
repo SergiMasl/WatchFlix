@@ -1,0 +1,81 @@
+.rpof_con {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #141414;
+}
+
+.wrapper {
+   
+}
+
+.list_prof {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.prof-lab {
+    width: 100%;
+    color: #fff;
+    font-size: bold;
+    margin-bottom: 30px;
+}
+
+.wrap {
+    display: flex;
+    justify-content: center;
+    width: 410px;
+    margin-top: 10%;
+}
+
+.list_prof{
+    display: flex;
+    justify-content: space-around;
+}
+
+.user_prof {
+    height: 130px;
+    width: 110px;
+    color: #272c30;
+
+}
+
+.user_prof:hover {
+    color: #fff;
+}
+
+.prof_btn {
+    width: 100%;
+    height: 118px;
+}
+
+.btn_img {
+    width: 100%;
+    height: 100%;
+}
+
+.prof_link_wrap{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.prof_link_wrap > a {
+    padding: 10px 20px;
+    border: 2px solid #747474;
+    text-decoration: none;
+    color: #747474;
+}
+
+.prof_link_wrap > a:hover {
+    border: 2px solid #fff;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+p {
+    text-align: center;
+}

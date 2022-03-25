@@ -5,30 +5,24 @@
         <div class="main_text-wrap">
             <h1 class="main_text main_text_title">Unlimited movies, TV shows, and more.</h1>
             <h3 class="main_text main_text_subtitle">Watch anywhere. Cancel anytime.</h3>
-            <h4 class="main_text main_text_title">Ready to watch? Enter your email to create or restart your membership.</h4>
+            <h4 class="main_text main_text_info">Ready to watch? Enter your email to create or restart your membership.</h4>
         </div>
         <div class="input_signUp" >
-            <form #signUp="ngForm" (submit)="onFormSignUp(signUp.value)">
-                <div class="form-group_singUp_email">
-                    <label for="">Email address</label>
+            <form #signUp="ngForm" (submit)="onFormSignUp(signUp.value)" class="emailForm">
+                <div class="singUp_email">
                     <input 
+                    placeholder="Email"
                         type="text" 
                         name="email" 
                         class="form-control" 
                         (ngModel) = "email" 
                         #email="ngModel"
-                        [class.is-invalid]="email.touched && email.invalid"
                         required
                     >
-                    <small class="text-danger" [class.d-none]="email.untouched || email.valid">*This is required field</small>
                 </div>
-                <input [disabled]="signUp.invalid" type="submit" value="Get Sterted >" class="btn btn-primary">
+                <input [disabled]="signUp.invalid" type="submit" value="Get Sterted >" class=" btn-EmailSub">
             </form>
         </div>
 
     </div>
 </div>
-
-<!-- <form #getProfile="ngForm" (submit)="onFormgetProfile()">
-    <input type="submit" value="Get profile >" class="btn btn-primary">
-</form> -->

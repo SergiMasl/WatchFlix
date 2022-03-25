@@ -1,4 +1,12 @@
+<div class="layout">
+    <app-nav-bar-home></app-nav-bar-home>
+    <button (click)="goBack()" class="goBack">Go back</button>
 
-<app-view-profile *ngIf='!isDisplay'></app-view-profile>
-<app-update-profile *ngIf='isDisplay'></app-update-profile>
+    <div class="wrap">
+        <app-view-profile *ngIf='!isDisplay'></app-view-profile>
+        <app-update-profile *ngIf='isDisplay'></app-update-profile>
+    </div>
+</div>
+
+
 

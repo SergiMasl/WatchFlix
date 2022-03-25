@@ -26,9 +26,12 @@ export class HomeComponent implements OnInit {
     }
   }
 
-
   onClickAdult(){
     this.router.navigateByUrl(`/browes?u_name=${this.user.u_name}`);
+    return false;
+  }
+  onClickKid(){
+    this.router.navigateByUrl(`browes/${this.user.u_name}?isKids=true`);
     return false;
   }
 }

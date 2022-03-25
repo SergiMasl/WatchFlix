@@ -1,0 +1,19 @@
+<li class="media" >
+    <div class="title_wrap">
+        <p class="vid_tit">{{ post.title}} </p>
+        <button (click)="addToMyList" class="addMyList">
+            <img src="/assets/star_rate_black_24dp.svg" alt="addToMyList">
+        </button>
+    </div>
+    <iframe class="video"  [src]="transform(post.URL)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div>
+        
+        <div class="wrap_desc" [ngClass]="{'visible': isVisible}">
+            
+            <button class="btn_read_des" (click)="readDescription()">
+                <img src="/assets/expand_more_black_24dp.svg" alt="ViewMore">
+            </button>
+            <p class="video_descrip">{{post.descripshins}}</p>
+        </div>
+    </div>
+</li>

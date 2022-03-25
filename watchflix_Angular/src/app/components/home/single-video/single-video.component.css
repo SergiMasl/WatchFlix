@@ -1,0 +1,82 @@
+
+.list-unstyled {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 0px 0px 9px 3px white;
+}
+
+.media {
+    margin: 40px 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 320px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0px 0px 9px 3px rgb(250, 106, 106);
+    padding:10px 10px;
+    border-radius: 5px;
+}
+
+.wrap_desc {
+    width: 300px;
+    max-height: 30px;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0;
+    transition: 1s;
+    transition: max-height 0.2s;
+  }
+  
+  .video_descrip {
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  .visible {
+    max-height: 100px;
+    overflow: auto;
+  }
+
+.btn_read_des {
+    position: absolute;
+    bottom: 0px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+}
+
+.vid_tit {
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 239px;
+    text-overflow: ellipsis;
+}
+
+.addMyList {
+    width: 30px;
+    height: 30px;
+    background:transparent;
+    border: none;
+    padding: 0;
+}
+
+.addMyList > img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+}
+
+.addMyList > img:hover{
+    border-radius: 40px;
+    box-shadow: 0px 0px 9px 3px white;
+}
+
+.title_wrap{
+    display: flex;
+}
