@@ -1,19 +1,6 @@
 <div class="wrapper">
     <form #updateForm="ngForm" (submit)="onFormSubmit(updateForm.value) " class="cont_prof">
       <h1 class="view_prof_h">My profile</h1>
-      <div class="prof_cont" >
-          <label class="prof_lable" for="">Username</label>
-          <input
-            type="text"
-            name="username"
-            class=" formInp"
-            [(ngModel)]="profObj.username"
-            #username="ngModel"
-            [class.is-invalid]="username.invalid && username.touched"
-            required
-          />
-          <small class="text-danger" [class.d-none]="username.untouched || username.valid">*This is required field</small>
-        </div>
 
         <div class="prof_cont">
           <label class="prof_lable"  for="">Name</label>
@@ -37,9 +24,7 @@
             required
             pattern="^\d{10}$"
           />
-          <!-- <small class="text-danger" [class.d-none]="mobile.untouched || mobile.valid">This is required and should be 10 digit</small> -->
           <div *ngIf="mobile.errors && (mobile.invalid || mobile.touched)">
-              
               <small class="text-danger" *ngIf="mobile.errors['required']">Mobile number is required</small>
               <small class="text-danger" *ngIf="mobile.errors['pattern']">Mobile number should be 10 digit</small>
           </div>
@@ -51,6 +36,8 @@
             <option *ngFor="let country of countries">{{ country }}</option>
           </select>
         </div>
+
+        
 
         <input [disabled]="updateForm.invalid" type="submit" value="Update" class="btn-EmailSub" />
 

@@ -1,7 +1,6 @@
 package com.rev.watchFlix.service;
 
 import com.rev.watchFlix.entity.User;
-import com.rev.watchFlix.repository.TempUserRep;
 import com.rev.watchFlix.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,8 +25,13 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public void updateUser(int id, User employee) {
-
+        User user =  repository.findById(id).get();
+        user.setName(employee.getName());
+        user.setMobile(employee.getMobile());
+        user.setCountry(employee.getCountry());
+        repository.save(user);
     }
+
 
     @Override
     public void deleteUser(int id) {

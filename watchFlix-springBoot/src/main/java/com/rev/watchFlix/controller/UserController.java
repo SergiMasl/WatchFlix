@@ -19,16 +19,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-//    @GetMapping("/signupuser")
-//    public List<User> getAllUsers(){
-//        return userService.getAllUsers();
-//    }
-
-//    @GetMapping("/signupuser/{id}")
-//    public User getUserById(@PathVariable("id") int id){
-//        return userService.getUserById(id);
-//    }
-
 
     //ADD USER
     String alert;
@@ -120,10 +110,25 @@ public class UserController {
         if(user == null){
             hero = null;
         } else {
-            //step 2. check user by username & pass
+//            //step 2. goi id
+            hero = checkinUser.getUserByUName(user.getUsername());
             System.out.println("************");
-            hero = checkinUser.updateUser(user.getUsername(), user.getCountry(), user.getName(), user.getMobile());
-            System.out.println(hero);
+            System.out.println(hero.getId());
+
+            //step 3. check update inputs
+            // if change mobile:
+            if(user.getMobile() == null){
+                user.setMobile(hero.getMobile());
+            }
+
+            if(user.getName() == null){
+                user.setName(hero.getName());
+            }
+            if(user.getCountry() == null){
+                user.setCountry(hero.getCountry());
+            }
+
+            userService.updateUser(hero.getId(), user);
         }
         //step 3. req user
         return hero;
