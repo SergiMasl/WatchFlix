@@ -12,7 +12,7 @@ import { UserService } from 'src/app/service/user.service';
 })
 
 export class HomeComponent implements OnInit {
-  user = {u_name: "ALex Posh", u_k_name: "Peter Porsh"}
+  user = {u_name: localStorage.getItem("name"), u_k_name: ""}
 
 
   constructor(private router: Router,  private userServ: UserService) {

@@ -16,7 +16,8 @@ export class UserService {
   
   get getHero(){
      return {
-      "username": localStorage.getItem("username")
+      "username": localStorage.getItem("username"),
+      "name": localStorage.getItem("name")
      }
   }
 

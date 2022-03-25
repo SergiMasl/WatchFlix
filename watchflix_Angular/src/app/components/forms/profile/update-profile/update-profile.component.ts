@@ -56,6 +56,7 @@ export class UpdateProfileComponent implements OnInit {
       this.router.navigateByUrl(`/home`)
     } else {
       alert("Update Success!")
+      localStorage.setItem("username", `${this.profObj.name}`);
       this.router.navigateByUrl(`/home`)
     }
   }
