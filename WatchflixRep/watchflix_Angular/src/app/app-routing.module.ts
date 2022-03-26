@@ -18,6 +18,7 @@ import { AdminViewAdminComponent } from './components/admin-view-admin/admin-vie
 import { AdminDeleteComponent } from './components/admin-delete/admin-delete.component';
 
 
+
 const routes: Routes = [
   // { path: '', component: LayoutComponent},
   { path: 'main', component: IndexComponent },
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path: 'adminoptions', component: AdminOptionsComponent},
   { path: 'adminviewall', component: AdminViewUsersComponent },
   { path: 'adminhome', component: AdminHomeComponent },
+  { path: 'adminupdate', component: AdminUpdateComponent },
   { path: 'adminupdate/:id', component: AdminUpdateComponent },
   { path: 'showadmin', component: AdminViewAdminComponent},
   { path: 'deleteUsers', component: AdminDeleteComponent}

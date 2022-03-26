@@ -29,6 +29,7 @@ import { AdminUpdateComponent } from './components/admin-update/admin-update.com
 import { AdminViewAdminComponent } from './components/admin-view-admin/admin-view-admin.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +54,7 @@ import { AdminViewAdminComponent } from './components/admin-view-admin/admin-vie
     AdminViewUsersComponent,
     AdminUpdateComponent,
     AdminViewAdminComponent,
+
   ],
   imports: [
     BrowserModule,

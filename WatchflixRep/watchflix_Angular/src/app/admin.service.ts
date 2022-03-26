@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Admin } from './Admin'; 
+import { User } from './User';
 import { Users2 } from './User2';
 
 
@@ -18,8 +19,8 @@ export class AdminService {
 
   constructor(private http: HttpClient) { } 
 
-  getUsers(): Observable<Users2[]>{
-    return this.http.get<Users2[]>(`${this.baseURL}`)
+  getUsers(): Observable<User[]>{
+    return this.http.get<User[]>(`${this.baseURL}`)
   }
 
   deleteUserview(id: number): Observable<Object> {
@@ -31,6 +32,11 @@ export class AdminService {
     return this.http.get<Admin[]>(`${this.baseURL2}`)
   }
 
+
+  getUserbyId(id: number): Observable<User>{
+    return this.http.get<User>(`${this.baseURL}/${id}`);
+    
+  }
 
  
 

@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { subscribeOn } from 'rxjs';
+import { AdminService } from 'src/app/admin.service';
 import { changeUser } from 'src/app/changeUser';
+import { User } from 'src/app/User';
 
 @Component({
   selector: 'app-admin-update',
@@ -8,13 +12,26 @@ import { changeUser } from 'src/app/changeUser';
 })
 export class AdminUpdateComponent implements OnInit {
 
-  CUserModel  = new changeUser('', false, false, false)
-  router: any;
 
-  constructor() { }
+  id!: number;
+  countries = ['USA', 'China', 'UAE', 'Japan']
+  email = "";
+  status= "";
+  userModel  = new User('', this.email, 1, '', '','', false, false, false);
+  constructor(private adminService: AdminService, 
+    private route: ActivatedRoute) { }
+
+    router: any;
 
   ngOnInit(): void {
+    this.userModel = new User('', this.email, 1, '', '','', false, false, false);
+    this.id = this.route.snapshot.params['id'];
+    this.adminService.getUserbyId(this.id).subscribe(data =>{
+      this.userModel = data;
+    }, error => (console.log));
   }
+
+
 
   onFormUpdate(data: any){
     console.log(data)

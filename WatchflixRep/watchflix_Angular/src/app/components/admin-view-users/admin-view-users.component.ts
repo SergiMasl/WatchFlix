@@ -14,7 +14,6 @@ export class AdminViewUsersComponent implements OnInit {
   
   constructor(private adminService: AdminService, private router: Router) { }
 
-
   ngOnInit(): void {
    this.getUsers();
   }
