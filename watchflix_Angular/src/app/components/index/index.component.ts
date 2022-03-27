@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SendEmailService } from 'src/app/service/send-email.service';
 import { GetProfileService } from 'src/app/service/profile/get-profile.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-index',
@@ -11,12 +12,14 @@ import { GetProfileService } from 'src/app/service/profile/get-profile.service';
 })
 export class IndexComponent implements OnInit {
   email!: string;
-  constructor(private router: Router, private emailService: SendEmailService, private getProfile: GetProfileService) { }
+  constructor(private router: Router, private emailService: SendEmailService, private getProfile: GetProfileService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     if(localStorage.getItem('username')){
       this.router.navigateByUrl(`/home`)
-
+    }
+    if(localStorage.getItem('adminUsername')){
+      this.router.navigateByUrl(`/adminoptions`)
     }
     
   }
@@ -43,11 +46,21 @@ export class IndexComponent implements OnInit {
 
   checking(resp: string){
     if(resp == "408"){
-      alert("Email is already used... try other")
+      this.showerror("Email is already used... try other");
+
       this.router.navigateByUrl(`/main`)
     } else {
+      this.showSuccess("Video was added");
       this.goNext(resp);
     }
+  }
+
+  showSuccess(e: string | undefined) {
+    this.toastr.success(e);
+  }
+
+  showerror(e: string | undefined) {
+    this.toastr.error(e);
   }
 }
  

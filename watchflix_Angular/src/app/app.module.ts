@@ -36,6 +36,8 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
+import { AdminProfComponent } from './adminComponent/admin-prof/admin-prof.component';
+import { AdminAddComponent } from './adminComponent/admin-add/admin-add.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +68,8 @@ import { ToastrModule } from 'ngx-toastr';
     AdminViewUsersComponent,
     AdminUpdateComponent,
     AdminIndexComponent,
+    AdminProfComponent,
+    AdminAddComponent,
   ],
   imports: [
     BrowserModule,

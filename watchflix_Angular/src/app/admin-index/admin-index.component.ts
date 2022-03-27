@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminLogInService } from '../serviceAdmin/admin-log-in.service';
+import { LocalAdmin } from '../serviceAdmin/admin.service';
 
 @Component({
   selector: 'app-admin-index',
@@ -8,7 +9,7 @@ import { AdminLogInService } from '../serviceAdmin/admin-log-in.service';
   styleUrls: ['./admin-index.component.css']
 })
 export class AdminIndexComponent implements OnInit {
-  admin = {username: "", password: ""}
+  admin = {adminUsername: "", adminPassword: ""}
 
   constructor(private router: Router, private adminServ: AdminLogInService, ) { }
 
@@ -16,22 +17,20 @@ export class AdminIndexComponent implements OnInit {
   }
 
   onFormSubmit(data: any){
-    //1. send {} and get req from backeng
-    this.admin.username = data.username;
-    this.admin.password = data.password;
-
-  //  this.adminServ.getLogIn(this.admin).subscribe(data => this.checking(resp));
+    this.admin.adminUsername = data.adminUsername;
+    this.admin.adminPassword = data.adminPassword;
+   this.adminServ.getLogIn(this.admin).subscribe((resp: LocalAdmin) => this.checking(resp));
   }
 
-  // checking(resp){
-  //   if(resp == null){
-  //     alert("Password or user name are wrong, try one more time!")
-  //     this.router.navigateByUrl(`/signin`)
-  //   } else {
-      //2. add hero to
-    // this.userServ.setHero(resp)
-    //  this.goNextPage();
-   // }
-  // }
+  checking(resp: LocalAdmin){
+    if(resp == null){
+      alert("Password or user name are wrong, try one more time!")
+      this.router.navigateByUrl(`/signin`)
+    } else {
+      alert("Success!")
+      localStorage.setItem("adminUsername", this.admin.adminUsername)
+      this.router.navigateByUrl(`/adminoptions`)
+   }
+  }
 
 }

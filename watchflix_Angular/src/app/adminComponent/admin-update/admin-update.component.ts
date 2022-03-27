@@ -11,29 +11,29 @@ import { User } from 'src/app/User';
 export class AdminUpdateComponent implements OnInit {
 
 
-  id!: number;
-  countries = ['USA', 'China', 'UAE', 'Japan']
-  email = "";
-  status= "";
-  userModel  = new User('', this.email, '', '','', false, "", false, "");
+  // id!: number;
+  // countries = ['USA', 'China', 'UAE', 'Japan']
+  // email = "";
+  // status= "";
+ // userModel  = new User('', this.email, '', '','', false, "", false, "");
   constructor(private adminService: AdminService, 
     private route: ActivatedRoute) { }
 
     router: any;
 
   ngOnInit(): void {
-    this.userModel = new User('', this.email, '', '','', false, "", false, "");
-    this.id = this.route.snapshot.params['id'];
-    this.adminService.getUserbyId(this.id).subscribe(data =>{
-      this.userModel = data;
-    }, error => (console.log));
+    // this.userModel = new User('', this.email, '', '','', false, "", false, "");
+    // this.id = this.route.snapshot.params['id'];
+    // this.adminService.getUserbyId(this.id).subscribe(data =>{
+    //   this.userModel = data;
+    //}, error => (console.log));
   }
 
 
 
   onFormUpdate(data: any){
-    console.log(data)
-    this.router.navigateByUrl('/adminupdate');
+    // console.log(data)
+    // this.router.navigateByUrl('/adminupdate');
   }
 
 }

@@ -1,35 +1,35 @@
 <div class="container admin-log">
-    <!-- <div class="form_border">
+    <div class="form_border">
         <h1>Log In</h1>
         <form #singIn="ngForm" (submit)="onFormSubmit(singIn.value)">
           <div class="form-group">
             <label class="lable" for="">Username</label>
             <input 
                 type="text" 
-                name="username" 
+                name="adminUsername" 
                 class="form-control" 
-                (ngModel) = "username" 
-                #username="ngModel"
-                [class.is-invalid]="username.touched && username.invalid"
+                (ngModel) = "adminUsername" 
+                #adminUsername="ngModel"
+                [class.is-invalid]="adminUsername.touched && adminUsername.invalid"
                 required
             >
-            <small class="text-danger" [class.d-none]="username.untouched || username.valid">*This is required field</small>
+            <small class="text-danger" [class.d-none]="adminUsername.untouched || adminUsername.valid">*This is required field</small>
             <div class="form-group">
               <label class="lable" for="">Password</label>
               <input 
                   type="text" 
-                  name="password" 
+                  name="adminPassword" 
                   class="form-control" 
-                  (ngModel) = "password" 
-                  #password="ngModel"
-                  [class.is-invalid]="password.touched && password.invalid"
+                  (ngModel) = "adminPassword" 
+                  #adminPassword="ngModel"
+                  [class.is-invalid]="adminPassword.touched && adminPassword.invalid"
                   required
               >
-              <small class="text-danger" [class.d-none]="password.untouched || password.valid">*This is required field</small>
+              <small class="text-danger" [class.d-none]="adminPassword.untouched || adminPassword.valid">*This is required field</small>
           </div>
-          
+          </div> 
           <input [disabled]="singIn.invalid" type="submit" value="Register" class="btn btn-primary" class="btn-EmailSub">
         </form>
-    </div> -->
+    </div>
    
 </div>

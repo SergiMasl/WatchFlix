@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SignUpServiceService } from 'src/app/service/sign-up-service.service';
 import { User } from 'src/app/User'; 
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-sign-up',
@@ -14,7 +15,7 @@ export class SignUpComponent implements OnInit {
   status= "";
   userModel  = new User('', this.email, "", '', '', false, '', false, "")
 
-  constructor(private route: ActivatedRoute, private router: Router, private signUpServis: SignUpServiceService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private signUpServis: SignUpServiceService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -29,12 +30,18 @@ export class SignUpComponent implements OnInit {
 
   checking(resp: {}){
     if(resp == "200"){
-          alert("Sign Up Success")
+      this.showSuccess("Video was added");
           this.router.navigateByUrl(`/main`)
         } else {
-          alert("Username or phone already used... try other")
+          this.showerror("Username or phone already used... try other");
           this.router.navigateByUrl(`/signup?email=${this.userModel.email}&status=200`)
         }
       }
+      showSuccess(e: string | undefined) {
+        this.toastr.success(e);
+      }
 
+      showerror(e: string | undefined) {
+        this.toastr.error(e);
+      }
 } 

@@ -20,18 +20,8 @@ import javax.persistence.*;
 )
 public class Admin {
     @Id
-    @SequenceGenerator(
-            name ="admin_sequence",
-            sequenceName = "admin_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "admin_sequence"
-    )
+    @GeneratedValue
     public int adminId;
-    //so im probably going to throw ID USER and PASS together embedd the rest
-    //making it easier to view the database
     @Column(name="adminName")
     private String adminName;
     @Column(name="adminUsername")

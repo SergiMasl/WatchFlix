@@ -17,6 +17,7 @@ import { AdminUpdateComponent } from './adminComponent/admin-update/admin-update
 import { AdminViewAdminComponent } from './adminComponent/admin-view-admin/admin-view-admin.component';
 import { AdminDeleteComponent } from './adminComponent/admin-delete/admin-delete.component';
 import { AdminIndexComponent } from './admin-index/admin-index.component';
+import { AdminAddComponent } from './adminComponent/admin-add/admin-add.component';
 
 const routes: Routes = [
   { path: 'main', component: IndexComponent },
@@ -38,7 +39,8 @@ const routes: Routes = [
   { path: 'adminupdate', component: AdminUpdateComponent },
   { path: 'adminupdate/:id', component: AdminUpdateComponent },
   { path: 'showadmin', component: AdminViewAdminComponent},
-  { path: 'deleteUsers', component: AdminDeleteComponent}
+  { path: 'deleteUsers', component: AdminDeleteComponent},
+  { path: 'addAdmin', component: AdminAddComponent},
 ];
 
 @NgModule({

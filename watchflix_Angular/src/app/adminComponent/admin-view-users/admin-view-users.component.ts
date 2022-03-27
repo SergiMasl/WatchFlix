@@ -15,26 +15,25 @@ export class AdminViewUsersComponent implements OnInit {
   constructor(private adminService: AdminService, private router: Router) { }
 
   ngOnInit(): void {
- // this.getUsers();
+    this.getUsers();
   }
 
-// private getUsers(){
-//    this.adminService.getUsers().subscribe((response: Users2[]) =>{
-//     console.log(response);
-//     this.users2 = response;
-//   });
-// }
+private getUsers(){
+   this.adminService.getUsers().subscribe((response: Users2[]) =>{
+    console.log(response);
+    this.users2 = response;
+  });
+}
 
-//   deleteUserview(id: number){
-//     this.adminService.deleteUserview(id).subscribe(data=>{
-//       console.log(data);
-//       this.getUsers();
+  deleteUserview(id: number){
+    this.adminService.deleteUserview(id).subscribe(data=>{
+      alert("User was deleted!")
+      this.getUsers();
+    });
+  }
 
-//     });
-//   }
-
-//   updateUserview(id: number){
-//     this.router.navigate(['adminupdate',id]);
-//     }
+  updateUserview(id: number){
+    this.router.navigate(['adminupdate',id]);
+    }
   
   }

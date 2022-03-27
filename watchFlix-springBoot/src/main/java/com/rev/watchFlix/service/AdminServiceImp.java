@@ -33,6 +33,10 @@ public class AdminServiceImp implements AdminService{
 
     }
 
+    @Override
+    public Admin addAdmin(Admin admin) {
+        return adminRepository.save(admin);
+    }
 
 
     @Override
@@ -41,10 +45,6 @@ public class AdminServiceImp implements AdminService{
     }
 
 
-    /*@Override
-    public Admin addAdmin(Admin user) {
-        return adminRepository.save(user);
-    }*/
 
     @Override
     public void updateAdmin(int id, Admin user) {
@@ -56,7 +56,8 @@ public class AdminServiceImp implements AdminService{
         adminRepository.deleteById(id);
     }
 
-
+    @Autowired
+    private AdminRepository checkinAdmin;
 
 
 }

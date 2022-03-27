@@ -1,0 +1,53 @@
+<div class="container admin-log">
+    <div class="form_border">
+        <h1>Sign up new Admin</h1>
+            <form #registerForm="ngForm" (submit)="onFormSubmit(registerForm.value)" class="stepEmai1">
+            
+            <div class="emailOutput">
+            </div>
+        
+            <div class="form-group" >
+                <label for="">Name</label>
+                <input
+                type="text"
+                name="name"
+                class="form-control"
+                ngModel
+                />
+            </div>
+        
+            <div class="form-group" >
+                <label for="">Username</label>
+                <input
+                type="text"
+                name="username"
+                class="form-control"
+                ngModel
+                />
+            </div>
+        
+            <div class="form-group">
+                <label for="">Password</label>
+                <input
+                type="text"
+                name="password"
+                class="form-control"
+                ngModel
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="">Email</label>
+                <input
+                type="text"
+                name="email"
+                class="form-control"
+                ngModel
+                />
+        
+            </div>
+            
+            <input type="submit" value="Register" class="btn-EmailSub" />
+            </form>
+        </div>
+  </div>

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { UpdateProfService } from 'src/app/service/profile/update-prof.service';
 import { ViewprofService } from 'src/app/service/profile/viewprof.service';
 import { User } from 'src/app/User';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-update-profile',
@@ -22,7 +23,7 @@ export class UpdateProfileComponent implements OnInit {
     name: "",
   }
   
-  constructor(private viewProf: ViewprofService, private update: UpdateProfService, private router: Router) { }
+  constructor(private viewProf: ViewprofService, private update: UpdateProfService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.viewProf.getProf(this.prof).subscribe( (resp: User)=> this.checking(resp));
@@ -52,12 +53,19 @@ export class UpdateProfileComponent implements OnInit {
 
   checkingUpdate(resp: any){
     if(resp == null){
-      alert("Something wrong!")
+      this.showerror("Something wrong!");
       this.router.navigateByUrl(`/home`)
     } else {
-      alert("Update Success!")
+      this.showSuccess("Video was added");
       localStorage.setItem("name", `${this.profObj.name}`);
       this.router.navigateByUrl(`/home`)
     }
+  }
+  showSuccess(e: string | undefined) {
+    this.toastr.success(e);
+  }
+
+  showerror(e: string | undefined) {
+    this.toastr.error(e);
   }
 }

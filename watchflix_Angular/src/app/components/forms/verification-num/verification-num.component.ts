@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VerificationNumService } from 'src/app/service/profile/verification-num.service';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-verification-num',
@@ -11,7 +13,7 @@ export class VerificationNumComponent implements OnInit {
 
   verificationObj = {email: "", securityNumber: ""}
 
-  constructor(private route: ActivatedRoute, private router: Router, private verfNumSec: VerificationNumService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private verfNumSec: VerificationNumService,private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -31,11 +33,20 @@ export class VerificationNumComponent implements OnInit {
 
   checking(resp: {}){
     if(resp == "409"){
-      alert("Code is not matche... try one more time!")
-      this.router.navigateByUrl(`/verPage?email=${this.verificationObj.email}&status=200`)
+      this.showerror("Code is not matche... try one more time!");
+            this.router.navigateByUrl(`/verPage?email=${this.verificationObj.email}&status=200`)
     } else {
+      this.showSuccess("Success!");
       this.goNextPage(resp);
     }
+  }
+  
+  showSuccess(e: string | undefined) {
+    this.toastr.success(e);
+  }
+
+  showerror(e: string | undefined) {
+    this.toastr.error(e);
   }
 
 }

@@ -1,4 +1,4 @@
-<app-admin-options></app-admin-options>
+<!-- <app-admin-options></app-admin-options>
 <form #UpdateForm="ngForm" (submit)="onFormUpdate(UpdateForm.value)">
   <h3>Update User</h3>
   <div class="form-group" >
@@ -37,8 +37,8 @@
       required
       pattern="^\d{10}$"
     />
-    <!-- <small class="text-danger" [class.d-none]="mobile.untouched || mobile.valid">This is required and should be 10 digit</small> -->
-    <div *ngIf="mobile.errors && (mobile.invalid || mobile.touched)">
+    <small class="text-danger" [class.d-none]="mobile.untouched || mobile.valid">This is required and should be 10 digit</small> -->
+    <!-- <div *ngIf="mobile.errors && (mobile.invalid || mobile.touched)">
         
         <small class="text-danger" *ngIf="mobile.errors['required']">Mobile number is required</small>
         <small class="text-danger" *ngIf="mobile.errors['pattern']">Mobile number should be 10 digit</small>
@@ -90,4 +90,4 @@
 
   
   <input  type="submit" value="Update Account" class="btn btn-primary" />
-</form>
+</form> -->
