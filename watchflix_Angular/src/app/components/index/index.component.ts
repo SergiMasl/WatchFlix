@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SendEmailService } from 'src/app/send-email.service';
-import { GetProfileService } from 'src/app/service/get-profile.service';
+import { SendEmailService } from 'src/app/service/send-email.service';
+import { GetProfileService } from 'src/app/service/profile/get-profile.service';
 
 @Component({
   selector: 'app-index',

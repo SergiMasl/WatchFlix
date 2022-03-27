@@ -1,9 +1,16 @@
 package com.rev.watchFlix.restservice;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.rev.watchFlix.entity.User;
+import com.rev.watchFlix.repository.UserRepository;
+import com.rev.watchFlix.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -11,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class GreetingController {
     private String movies= "[\n" +
             "    {\n" +
+            "       \"id\": \"1\",\n" +
             "       \"title\": \"Coldplay - Adventure Of A Lifetime (Official Video)\",\n" +
             "       \"year\": \"2015\",\n" +
             "       \"isKids\": false,\n" +
@@ -20,6 +28,7 @@ public class GreetingController {
             "       \"category\": \"history\"\n" +
             "    },\n" +
             "    {\n" +
+            "       \"id\": \"2\",\n" +
             "       \"title\": \"The History of the World: Every Year\",\n" +
             "       \"year\": \"10/15/2016\",\n" +
             "       \"isKids\": false,\n" +
@@ -29,6 +38,7 @@ public class GreetingController {
             "       \"category\": \"history\"\n" +
             "    },\n" +
             "    {\n" +
+            "       \"id\": \"3\",\n" +
             "      \"title\": \"History of the World In one movie 2016 HD documentary\",\n" +
             "       \"year\": \"09/18/2016\",\n" +
             "       \"isKids\": false,\n" +
@@ -38,6 +48,7 @@ public class GreetingController {
             "      \"category\": \"history\"\n" +
             "   },\n" +
             "   {\n" +
+            "       \"id\": \"4\",\n" +
             "      \"title\": \"Timeline of World History | Major Time Periods & Ages\",\n" +
             "      \"year\": \"05/08/2020\",\n" +
             "      \"isKids\": false,\n" +
@@ -47,6 +58,7 @@ public class GreetingController {
             "      \"category\": \"history\"\n" +
             "   },\n" +
             "   {\n" +
+            "       \"id\": \"5\",\n" +
             "      \"title\": \"World War One\",\n" +
             "      \"year\": \"07/01/2021\",\n" +
             "      \"isKids\": false,\n" +
@@ -56,6 +68,7 @@ public class GreetingController {
             "      \"category\": \"history\"\n" +
             "   },\n" +
             "   {\n" +
+            "       \"id\": \"6\",\n" +
             "      \"title\": \"The Whole History of the Earth and Life\",\n" +
             "      \"year\": \"07/07/2019\",\n" +
             "      \"isKids\": false,\n" +
@@ -65,6 +78,7 @@ public class GreetingController {
             "      \"category\": \"history\"\n" +
             "   },\n" +
             "   {\n" +
+            "       \"id\": \"7\",\n" +
             "       \"title\": \"Scream 2022\",\n" +
             "       \"year\": \"10/12/2021\",\n" +
             "       \"isKids\": false,\n" +
@@ -74,6 +88,7 @@ public class GreetingController {
             "       \"category\": \"horror\"\n" +
             "    },\n" +
             "    {\n" +
+            "       \"id\": \"8\",\n" +
             "      \"title\": \"No Exit | Official Trailer | 20th Century Studios\",\n" +
             "      \"year\": \"02/01/2022\",\n" +
             "      \"isKids\": false,\n" +
@@ -83,6 +98,7 @@ public class GreetingController {
             "      \"category\": \"horror\"\n" +
             "   },\n" +
             "   {\n" +
+            "       \"id\": \"9\",\n" +
             "      \"title\": \"Tom & Jerry | Tom & Jerry in Full Screen | Classic Cartoon Compilation | WB Kids\",\n" +
             "      \"year\": \"10/20/2021\",\n" +
             "      \"isKids\": true,\n" +
@@ -92,6 +108,7 @@ public class GreetingController {
             "      \"category\": \"cartoon\"\n" +
             "   },\n" +
             "   {\n" +
+            "       \"id\": \"10\",\n" +
             "      \"title\": \"Oggy a škodíci\",\n" +
             "      \"year\": \"03/02/2021\",\n" +
             "      \"isKids\": true,\n" +
@@ -101,6 +118,7 @@ public class GreetingController {
             "      \"category\": \"cartoon\"\n" +
             "   },\n" +
             "   {\n" +
+            "       \"id\": \"11\",\n" +
             "      \"title\": \"Looney Tunes | Newly Remastered Restored Cartoons Compilation | Bugs Bunny | Daffy Duck | Porky Pig\",\n" +
             "      \"year\": \"06/19/2020\",\n" +
             "      \"isKids\": true,\n" +
@@ -110,6 +128,7 @@ public class GreetingController {
             "      \"category\": \"cartoon\"\n" +
             "   },\n" +
             "   {\n" +
+            "       \"id\": \"12\",\n" +
             "      \"title\": \"Looney Tuesdays | Iconic Characters: Foghorn Leghorn | Looney Tunes | WB Kids\",\n" +
             "      \"year\": \"06/12/2020\",\n" +
             "      \"isKids\": true,\n" +
@@ -120,6 +139,7 @@ public class GreetingController {
             "   },\n" +
             "\n" +
             "    {\n" +
+            "       \"id\": \"13\",\n" +
             "       \"title\": \"\",\n" +
             "       \"year\": \"2015\",\n" +
             "       \"isKids\": false,\n" +
@@ -130,10 +150,79 @@ public class GreetingController {
             "    }\n" +
             " ]";
 
-
     @GetMapping("/greeting")
     public Greeting greeting() {
         return new Greeting( String.format(movies));
     }
 
+
+
+    @Autowired
+    private UserRepository checkinUser;
+
+    @Autowired
+    private UserService userService;
+
+
+    @PostMapping("/addVideo")
+    public String toggleFavVideo(@RequestBody User user) {
+        String videoId = String.valueOf(user.getId());
+        String status = "Error";
+        String list = user.getVideos();  //Username
+
+        String oldList = checkinUser.getVideoListByUsername(user.getUsername());
+        User hero = null;
+        //2. checked if already add?
+        if (oldList == null || oldList == "") {
+            hero = checkinUser.getUserByUName(user.getUsername());
+            user.setVideos(videoId);
+            userService.updateVideoList(hero.getId(), user);
+            status = "{\"status\":\"add\"}";
+        } else {
+            //check videoId is added before?
+            String[] videoItems = oldList.split(",");
+            List<String> itemsList = Arrays.asList(videoItems);
+            int index = IntStream.range(0, itemsList.size())
+                    .filter(i -> itemsList.get(i).equals(videoId))
+                    .findFirst()
+                    .orElse(-1);
+            if (index == -1) {
+                System.out.println("try to add: " + videoId);
+
+                List<String> list2 = new LinkedList<String>();
+                list2.addAll(itemsList);
+                list2.add(videoId);
+                String result = list2.stream()
+                        .map(n -> String.valueOf(n))
+                        .collect(Collectors.joining(","));
+                hero = checkinUser.getUserByUName(user.getUsername());
+                user.setVideos(result);
+                userService.updateVideoList(hero.getId(), user);
+                status = "{\"status\":\"add\"}";
+            } else {
+                List<String> list2 = new LinkedList<String>();
+                list2.addAll(itemsList);
+                list2.remove(index);
+                String result = list2.stream()
+                        .map(n -> String.valueOf(n))
+                        .collect(Collectors.joining(","));
+                hero = checkinUser.getUserByUName(user.getUsername());
+                user.setVideos(result);
+                userService.updateVideoList(hero.getId(), user);
+                status = "{\"status\":\"remove\"}";
+            }
+        }
+
+        return status;
+    }
+
+
+    @PostMapping("/getFavVidList")
+    public String getFavList(@RequestBody User user) {
+        System.out.println("22");
+        String videoList = checkinUser.getVideoListByUsername(user.getUsername());
+        System.out.println("22" + videoList);
+
+        return "{\"status\":\""+videoList+"\"}";
+    }
 }

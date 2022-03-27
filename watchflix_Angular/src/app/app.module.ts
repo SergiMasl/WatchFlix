@@ -25,7 +25,17 @@ import { ViewProfileComponent } from './components/forms/profile/view-profile/vi
 import { UpdateProfileComponent } from './components/forms/profile/update-profile/update-profile.component';
 import { NavBarHomeComponent } from './components/home/nav-bar-home/nav-bar-home.component';
 import { SingleVideoComponent } from './components/home/single-video/single-video.component';
+import { AdminDeleteComponent } from './adminComponent/admin-delete/admin-delete.component';
+import { AdminHomeComponent } from './adminComponent/admin-home/admin-home.component';
+import { AdminOptionsComponent } from './adminComponent/admin-options/admin-options.component';
+import { AdminViewAdminComponent } from './adminComponent/admin-view-admin/admin-view-admin.component';
+import { AdminViewUsersComponent } from './adminComponent/admin-view-users/admin-view-users.component';
+import { AdminUpdateComponent } from './adminComponent/admin-update/admin-update.component';
+import { AdminIndexComponent } from './admin-index/admin-index.component';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -49,12 +59,22 @@ import { SingleVideoComponent } from './components/home/single-video/single-vide
     UpdateProfileComponent,
     NavBarHomeComponent,
     SingleVideoComponent,
+    AdminDeleteComponent,
+    AdminHomeComponent,
+    AdminOptionsComponent,
+    AdminViewAdminComponent,
+    AdminViewUsersComponent,
+    AdminUpdateComponent,
+    AdminIndexComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     
   ],
   providers: [],

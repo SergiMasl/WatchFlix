@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/service/user.service'; 
-import { LogInServService } from 'src/app/service/log-in-serv.service'; 
-import { LocalUser } from 'src/app/service/user.service';
+import { UserService } from 'src/app/service/profile/user.service'; 
+import { LogInServService } from 'src/app/service/profile/log-in-serv.service'; 
+import { LocalUser } from 'src/app/service/profile/user.service';
 
 @Component({
   selector: 'app-sign-in-form',

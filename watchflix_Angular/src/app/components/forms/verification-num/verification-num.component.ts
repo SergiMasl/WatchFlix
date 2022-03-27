@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { VerificationNumService } from 'src/app/service/verification-num.service';
+import { VerificationNumService } from 'src/app/service/profile/verification-num.service';
 
 @Component({
   selector: 'app-verification-num',

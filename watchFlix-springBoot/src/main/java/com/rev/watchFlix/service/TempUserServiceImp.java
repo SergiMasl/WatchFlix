@@ -12,11 +12,6 @@ public class TempUserServiceImp implements TempUserService{
     private TempUserRep repository;
 
     @Override
-    public TemporaryUser getEmployeeById(int id) {
-        return repository.findById(id).get();
-    }
-
-    @Override
     public TemporaryUser addEmployee(TemporaryUser tempUser) {
         return repository.save(tempUser);
     }
@@ -28,11 +23,5 @@ public class TempUserServiceImp implements TempUserService{
         tempUser.setSecurityNumber(user.getSecurityNumber());
         tempUser.setIsExist(user.getIsExist());
         repository.save(tempUser);
-    }
-
-
-    @Override
-    public void deleteEmployee(int id) {
-        repository.deleteById(id);
     }
 }

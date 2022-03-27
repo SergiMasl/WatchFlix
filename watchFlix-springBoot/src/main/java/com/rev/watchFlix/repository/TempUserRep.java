@@ -20,16 +20,4 @@ public interface TempUserRep extends JpaRepository<TemporaryUser, Integer> {
     )
     String checkVerfNumAndEmail(String email, String security_number);
 
-    @Query(
-            value= "UPDATE temporary_user SET security_number=?2 WHERE s.email=?1",
-            nativeQuery = true
-    )
-    String updateVerfNum(String email, String security_number);
-
-
-    @Query(
-            value= "insert into temporary_user() values(?1, ?2)",
-            nativeQuery = true
-    )
-    String addVerfNum(String security_number, String email);
 }

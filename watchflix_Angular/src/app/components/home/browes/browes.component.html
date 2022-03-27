@@ -7,10 +7,15 @@
         <app-category
             (choosed)="onChooseCategory($event)"
             [catList]="filtredCategorys"
+            [selectedCat]="selectedCat"
         ></app-category>
 
         <ul class="list-unstyled">
-            <app-single-video *ngFor="let post of filtredPosts" [post]="post"></app-single-video>
+            <app-single-video 
+                *ngFor="let post of filtredPosts" 
+                [post]="post"
+                (choosed)="onFavClick()"
+            ></app-single-video>
         </ul>
         
     </div>

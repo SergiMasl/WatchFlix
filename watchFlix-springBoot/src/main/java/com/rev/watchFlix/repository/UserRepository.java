@@ -38,5 +38,16 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     )
     User updateUser(String username, String country);
 
+    @Query(
+            value= "SELECT videos FROM User s where s.username = ?1",
+            nativeQuery = true
+    )
+    String getVideoListByUsername(String username);
+
+    @Query(
+            value= "update User s set s.videos=?2 WHERE s.username=?1",
+            nativeQuery = true
+    )
+    String gaddVideoListByUsername(String username, String videos);
 }
 

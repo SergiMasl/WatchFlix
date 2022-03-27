@@ -1,7 +1,7 @@
 <li class="media" >
     <div class="title_wrap">
         <p class="vid_tit">{{ post.title}} </p>
-        <button (click)="addToMyList" class="addMyList">
+        <button (click)="addToMyList(post.id)" class="addMyList">
             <img src="/assets/star_rate_black_24dp.svg" alt="addToMyList">
         </button>
     </div>

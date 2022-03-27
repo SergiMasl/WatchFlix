@@ -8,6 +8,20 @@
     </div>
 
     <div class="form-group" >
+      <label for="">Name</label>
+      <input
+        type="text"
+        name="name"
+        class="form-control"
+        [(ngModel)]="userModel.name"
+        #name="ngModel"
+        [class.is-invalid]="name.invalid && name.touched"
+        required
+      />
+      <small class="text-danger" [class.d-none]="name.untouched || name.valid">*This is required field</small>
+    </div>
+
+    <div class="form-group" >
       <label for="">Username</label>
       <input
         type="text"

@@ -33,4 +33,7 @@ public class User {
     public String password;
     @Column(name = "name")
     public String name;
+    @Column(name = "videos")
+    public String videos;
+
 }

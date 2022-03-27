@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { FavorVideosService } from 'src/app/service/favor-videos.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-single-video',
@@ -8,6 +10,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class SingleVideoComponent implements OnInit {
   @Input() post!: any;
+  @Output() choosed = new EventEmitter<string>();
+
 
   isVisible = false;
 
@@ -15,9 +19,10 @@ export class SingleVideoComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
-  constructor( private sanitizer: DomSanitizer) {
+  constructor( private sanitizer: DomSanitizer, private postFav: FavorVideosService, private toastr: ToastrService) {
     this.sanitizer = sanitizer;
    }
+   username: string | null = "";
 
   ngOnInit(): void {
 
@@ -25,13 +30,27 @@ export class SingleVideoComponent implements OnInit {
 
   
   readDescription(){
-console.log(this.isVisible)
     this.isVisible = !this.isVisible
-    console.log(this.isVisible)
-
   }
 
-  addToMyList(){
-    console.log("fff")
+  addToMyList(e: any){
+    this.username = localStorage.getItem("username")
+    this.postFav.addToFav(e, this.username || "").subscribe(resp => this.checking(resp));
+    
+  }
+
+  checking(resp: {status: string}){
+    if(resp.status == "add"){
+      this.choosed.emit();
+      this.showSuccess("Video was added");
+    } 
+    if (resp.status == "remove"){
+      this.choosed.emit();
+      this.showSuccess("Video was Removed");
+    }
+  }
+
+  showSuccess(e: string | undefined) {
+    this.toastr.success(e);
   }
 }

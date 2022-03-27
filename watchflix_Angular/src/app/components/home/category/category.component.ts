@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class CategoryComponent implements OnInit {
 
   @Input() catList: any[] = [];
-
+  @Input() selectedCat: string = ""
 
   @Output() choosed = new EventEmitter<string>();
 

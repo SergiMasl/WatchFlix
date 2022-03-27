@@ -1,0 +1,45 @@
+<app-admin-options></app-admin-options>
+<div class="container">
+  <div class="card">
+    <div class="card=body">
+      <table class="table table-stripped">
+        <thead>
+          <th>Username</th>
+          <th>email</th>
+          <th>ID</th> 
+          <th>Mobile</th>
+          <th>Country</th>
+          <th>Gender</th>
+          <th>Subscribed</th>
+          <th>Action</th>
+          <th>Action</th>
+       
+        </thead>
+        <tbody>
+          <tr *ngFor ="let users2 of users2" >
+            <td>{{users2.username}}</td>
+            <td>{{users2.email}}</td>
+            <td>{{users2.id}}</td>
+           <td>{{users2.mobile}}</td>
+           <td>{{users2.country}}</td>
+           <td>{{users2.gender}}</td>
+           <td>{{users2.subscribe}}</td>
+            <td>
+              <!-- <button (click) = "updateUserview(users2.id)" class = "btn btn-info" style="margin-left: -10%;"> Update</button> -->
+            </td>
+            <td>
+              <!-- <button (click) = "deleteUserview(users2.id)" class = "btn btn-danger"> Delete </button> -->
+            </td>
+            
+        </tr>
+          
+          
+
+
+        </tbody>
+
+      </table>
+
+    </div>
+  </div>
+</div>

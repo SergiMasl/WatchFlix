@@ -1,0 +1,31 @@
+
+<app-admin-options></app-admin-options>
+<div class="container">
+    <div class="card">
+      <div class="card=body">
+        <table class="table table-stripped">
+          <thead>
+            <th>Id</th>
+            <th>Admin Name</th>
+            <th>Admin UserName</th>
+            <th>Admin Email</th> 
+         
+         
+          </thead>
+          <tbody>
+            <tr *ngFor ="let admins of admins" >
+              <td>{{admins.adminId}}</td>
+             <td>{{admins.adminName}}</td>
+             <td>{{admins.adminUsername}}</td>
+             <td>{{admins.adminEmail}}</td>
+            </tr>
+          
+  
+  
+          </tbody>
+  
+        </table>
+  
+      </div>
+    </div>
+  </div>

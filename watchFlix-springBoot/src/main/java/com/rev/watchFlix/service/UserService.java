@@ -11,6 +11,7 @@ public interface UserService {
     public User getUserById(int id);
     public User addUser(User user);
     public void updateUser(int id, User user);
+    public void updateVideoList(int id, User user);
 
 
     public void deleteUser(int id);

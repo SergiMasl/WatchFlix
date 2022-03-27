@@ -47,4 +47,11 @@ public class UserServiceImpl implements UserService{
         return repository.save(user);
     }
 
+    @Override
+    public void updateVideoList(int id, User employee) {
+        User user =  repository.findById(id).get();
+        user.setVideos(employee.getVideos());
+        repository.save(user);
+    }
+
 }

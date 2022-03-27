@@ -133,4 +133,10 @@ public class UserController {
         //step 3. req user
         return hero;
     }
+
+    @PostMapping("/getprofile")
+    public void getStudentFNAmeByEmail(@RequestBody String email){
+        String students = checkinUser.getStudentFNAmeByEmail(email);
+        System.out.println(students);
+    }
 }

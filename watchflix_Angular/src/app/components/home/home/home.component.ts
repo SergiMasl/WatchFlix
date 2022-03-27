@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/service/user.service';
+import { UserService } from 'src/app/service/profile/user.service';
 // import { Hero } from 'src/app/service/user.service';
 
 
