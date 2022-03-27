@@ -27,6 +27,7 @@ import { AdminDeleteComponent } from './components/admin-delete/admin-delete.com
 import { AdminViewUsersComponent } from './components/admin-view-users/admin-view-users.component';
 import { AdminUpdateComponent } from './components/admin-update/admin-update.component';
 import { AdminViewAdminComponent } from './components/admin-view-admin/admin-view-admin.component';
+import { AdminProfComponent } from './components/admin-prof/admin-prof.component';
 
 
 
@@ -54,6 +55,7 @@ import { AdminViewAdminComponent } from './components/admin-view-admin/admin-vie
     AdminViewUsersComponent,
     AdminUpdateComponent,
     AdminViewAdminComponent,
+    AdminProfComponent,
 
   ],
   imports: [

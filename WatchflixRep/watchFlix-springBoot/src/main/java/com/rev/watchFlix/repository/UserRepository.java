@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
-
     @Query(
             value= "SELECT * FROM User s where s.username = ?1",
             nativeQuery = true
@@ -20,5 +19,25 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     )
     String getStudentFNAmeByPhone(String phone);
 
+    @Query(
+            value= "SELECT * FROM User s where s.username = ?1 and s.password = ?2",
+            nativeQuery = true
+    )
+    User getUserByUNameAndPass(String username, String password);
+
+    @Query(
+            value= "SELECT * FROM User s where s.username = ?1",
+            nativeQuery = true
+    )
+    User getUserByUName(String username);
+
+    @Query(
+            value= "update User s set s.country=?2 WHERE s.username=?1",
+            nativeQuery = true
+    )
+    User updateUser(String username, String country);
+
 }
+
+
 

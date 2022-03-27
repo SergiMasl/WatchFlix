@@ -36,16 +36,13 @@ public class AdminServiceImp implements AdminService{
 
 
 
+
     @Override
     public Admin getAdminById(int id) {
         return adminRepository.findById(id).get();
     }
 
 
-    /*@Override
-    public Admin addAdmin(Admin user) {
-        return adminRepository.save(user);
-    }*/
 
     @Override
     public void updateAdmin(int id, Admin user) {
@@ -57,7 +54,22 @@ public class AdminServiceImp implements AdminService{
         adminRepository.deleteById(id);
     }
 
+    @Autowired
+    private AdminRepository checkinAdmin;
 
+   /* @PostMapping("/loginadmin")
+    public Admin adminlogIn(@RequestBody User user){
+        Admin hero;
+        if(user == null){
+            hero = null;
+        } else {
+          //step 2. check user by username & pass
+            hero = checkinAdmin.getUserByUNameAndPass(user.getUsername(), admin.password);
+            System.out.println(hero);
+        }
+        //step 3. req user
+        return hero;
+    }*/
 
 
 }

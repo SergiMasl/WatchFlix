@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class GetProfileService {
+export class GetAdminprofService {
 
   private baseURL = "http://localhost:9000/getadminprofile";
 

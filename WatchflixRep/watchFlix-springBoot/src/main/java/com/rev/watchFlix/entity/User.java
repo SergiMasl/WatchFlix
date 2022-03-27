@@ -29,4 +29,8 @@ public class User {
     public boolean subscribe;
     @Column(name="isActive")
     public boolean isActive;
+    @Column(name = "password")
+    public String password;
+    @Column(name = "name")
+    public String name;
 }

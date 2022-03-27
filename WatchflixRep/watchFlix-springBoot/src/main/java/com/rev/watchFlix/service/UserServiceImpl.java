@@ -33,8 +33,6 @@ public class UserServiceImpl implements UserService{
     public void deleteUser(int id) {
         repository.deleteById(id);
     }
-
-
     //ADD USer
     @Override
     public User addUser(User user) {

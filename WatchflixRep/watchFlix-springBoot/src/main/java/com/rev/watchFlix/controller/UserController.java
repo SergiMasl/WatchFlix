@@ -70,6 +70,20 @@ public class UserController {
         userService.updateUser(id, user);
         return "record updated successfully";
     }
+    @PostMapping("/loginuser")
+    public User logIn(@RequestBody User user){
+        User hero;
+        if(user == null){
+            hero = null;
+        } else {
+            //step 2. check user by username & pass
+            hero = checkinUser.getUserByUNameAndPass(user.getUsername(), user.password);
+            System.out.println(hero);
+        }
+        //step 3. req user
+        return hero;
+    }
+
 
     @DeleteMapping("/signupuser/{id}")
     public String deleteUser(@PathVariable("id") int id){

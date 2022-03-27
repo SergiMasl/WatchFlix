@@ -8,7 +8,8 @@ import java.util.List;
 
 @Service
 public interface AdminService {
-    public Admin getAdminById(int id);
+
+  public Admin getAdminById(int id);
   // public Admin addAdmin(Admin user);
     public void updateAdmin(int id, Admin user);
     public void deleteAdmin(int id);
