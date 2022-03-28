@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { UserService } from 'src/app/service/profile/user.service'; 
 import { LogInServService } from 'src/app/service/profile/log-in-serv.service'; 
 import { LocalUser } from 'src/app/service/profile/user.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-sign-in-form',
@@ -13,7 +14,7 @@ import { LocalUser } from 'src/app/service/profile/user.service';
 export class SignInFormComponent implements OnInit {
 
   
-  constructor(private router: Router, private userServ: UserService, private logIn: LogInServService) {   }
+  constructor(private router: Router, private userServ: UserService, private logIn: LogInServService, private toastr: ToastrService) {   }
 
   hero = {username: "", password: ""}
 
@@ -35,14 +36,22 @@ export class SignInFormComponent implements OnInit {
 
   checking(resp: LocalUser){
     if(resp == null){
-      alert("Password or user name are wrong, try one more time!")
+      this.showerror("Password or user name are wrong, try one more time!");
+
       this.router.navigateByUrl(`/signin`)
     } else {
       //2. add hero to
+      this.showSuccess("Success!");
     this.userServ.setHero(resp)
      this.goNextPage();
     }
   }
+  showSuccess(e: string | undefined) {
+    this.toastr.success(e);
+  }
+
+  showerror(e: string | undefined) {
+    this.toastr.error(e);
+  }
 }
 
-//LogInServService

@@ -30,7 +30,7 @@ export class SignUpComponent implements OnInit {
 
   checking(resp: {}){
     if(resp == "200"){
-      this.showSuccess("Video was added");
+      this.showSuccess("Success!");
           this.router.navigateByUrl(`/main`)
         } else {
           this.showerror("Username or phone already used... try other");

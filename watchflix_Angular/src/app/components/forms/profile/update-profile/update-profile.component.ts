@@ -56,7 +56,7 @@ export class UpdateProfileComponent implements OnInit {
       this.showerror("Something wrong!");
       this.router.navigateByUrl(`/home`)
     } else {
-      this.showSuccess("Video was added");
+      this.showSuccess("Success!");
       localStorage.setItem("name", `${this.profObj.name}`);
       this.router.navigateByUrl(`/home`)
     }

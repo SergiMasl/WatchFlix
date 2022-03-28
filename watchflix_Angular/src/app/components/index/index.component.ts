@@ -50,7 +50,7 @@ export class IndexComponent implements OnInit {
 
       this.router.navigateByUrl(`/main`)
     } else {
-      this.showSuccess("Video was added");
+      this.showSuccess("Success!");
       this.goNext(resp);
     }
   }

@@ -33,7 +33,7 @@ export class VerificationNumComponent implements OnInit {
 
   checking(resp: {}){
     if(resp == "409"){
-      this.showerror("Code is not matche... try one more time!");
+      this.showerror("Security code is wrong!");
             this.router.navigateByUrl(`/verPage?email=${this.verificationObj.email}&status=200`)
     } else {
       this.showSuccess("Success!");
