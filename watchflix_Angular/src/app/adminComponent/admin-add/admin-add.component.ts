@@ -32,6 +32,6 @@ newAdmin = {adminName: "", adminUsername: "", adminEmail: "", adminPassword: ""}
     if(resp.status == "Success"){
       alert("Success") 
     }
-    this.router.navigateByUrl(`/adminhome`)
+    this.router.navigateByUrl(`/showadmin`)
   }
 }

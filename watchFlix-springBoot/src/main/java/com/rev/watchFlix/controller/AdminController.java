@@ -79,18 +79,17 @@ public class AdminController {
     }
 
     //View profile
-    //set 1. get {} from front
-    @PostMapping("/viewadminprof")
-    public Admin viewadminProf(@RequestBody Admin admin){
+    @PostMapping("/viewadminprof22")
+    public Admin viewadminProf(@RequestBody String AdminUsername){
         Admin hero;
-        if(admin == null){
+        if(AdminUsername == null){
             hero = null;
         } else {
             //step 2. check user by username & pass
-            hero = checkinAdmin.getAdminByUName(admin.getAdminUsername());
+            hero = checkinAdmin.getAdminByUName(AdminUsername);
             System.out.println(hero);
         }
-        //step 3. req user
+//        //step 3. req user
         return hero;
     }
 

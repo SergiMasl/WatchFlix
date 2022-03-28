@@ -18,6 +18,8 @@ import { AdminViewAdminComponent } from './adminComponent/admin-view-admin/admin
 import { AdminDeleteComponent } from './adminComponent/admin-delete/admin-delete.component';
 import { AdminIndexComponent } from './admin-index/admin-index.component';
 import { AdminAddComponent } from './adminComponent/admin-add/admin-add.component';
+import { AdminProfComponent } from './adminComponent/admin-prof/admin-prof.component';
+
 
 const routes: Routes = [
   { path: 'main', component: IndexComponent },
@@ -41,6 +43,8 @@ const routes: Routes = [
   { path: 'showadmin', component: AdminViewAdminComponent},
   { path: 'deleteUsers', component: AdminDeleteComponent},
   { path: 'addAdmin', component: AdminAddComponent},
+  { path: 'viewadminprof2', component: AdminProfComponent},
+  
 ];
 
 @NgModule({

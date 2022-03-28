@@ -20,12 +20,17 @@ export type LocalAdmin = {
   providedIn: 'root'
 })
 export class AdminService {
- 
+
 
   private baseURL = "http://localhost:9000/adminviewall";
-  httpClient: any;
 
   constructor(private http: HttpClient) { } 
+
+  private baseURL3 = "http://localhost:9000/viewadminprof22";
+
+  getProfileAdmin(admin: string):Observable<string>{
+    return this.http.post<string>(`${this.baseURL3}`, admin);
+  }
 
   getUsers(): Observable<Users2[]>{
     return this.http.get<Users2[]>(`${this.baseURL}`)
