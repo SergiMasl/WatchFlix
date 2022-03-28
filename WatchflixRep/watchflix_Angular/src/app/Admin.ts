@@ -1,3 +1,12 @@
+export type LocalAdmin = {
+    //ADD MORE!!!!!
+    adminName: string;
+    adminUsername: string;
+    adminPassword: string;
+    adminEmail: string;
+    
+  }
+
 export class Admin{
     constructor(
         public adminId: string,

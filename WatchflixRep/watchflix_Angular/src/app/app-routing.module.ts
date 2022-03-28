@@ -17,6 +17,7 @@ import { AdminUpdateComponent } from './components/admin-update/admin-update.com
 import { AdminViewAdminComponent } from './components/admin-view-admin/admin-view-admin.component';
 import { AdminDeleteComponent } from './components/admin-delete/admin-delete.component';
 import { AdminProfComponent } from './components/admin-prof/admin-prof.component';
+import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
 
 
 
@@ -42,7 +43,8 @@ const routes: Routes = [
   { path: 'adminupdate/:id', component: AdminUpdateComponent },
   { path: 'showadmin', component: AdminViewAdminComponent},
   { path: 'deleteUsers', component: AdminDeleteComponent},
-  { path: 'viewadminprof', component: AdminProfComponent}
+  { path: 'viewaprof', component: AdminProfComponent},
+  { path: 'getadminprofile', component: AdminProfileComponent}
 
 
 ];

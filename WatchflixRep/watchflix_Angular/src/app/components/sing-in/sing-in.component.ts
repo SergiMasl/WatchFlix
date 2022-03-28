@@ -11,7 +11,7 @@ export class SingInComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    if(localStorage.getItem('username')){
+    if(localStorage.getItem('adminUsername')){
       this.router.navigateByUrl(`/signin`)
 
     }

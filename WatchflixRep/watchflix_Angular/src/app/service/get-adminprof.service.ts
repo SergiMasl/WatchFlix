@@ -7,12 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class GetAdminprofService {
 
-  private baseURL = "http://localhost:9000/getadminprofile";
+  private baseURL = "http://localhost:9000/getadminprof";
 
   constructor(private httpClient: HttpClient) { }
 
-  getProfileUser(user: {}):Observable<{}>{
-    return this.httpClient.post<{}>(`${this.baseURL}`, user)
+  getProfileUser(admin: {}):Observable<{}>{
+    return this.httpClient.post<{}>(`${this.baseURL}`, admin)
     
   }
 }

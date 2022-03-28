@@ -28,6 +28,9 @@ import { AdminViewUsersComponent } from './components/admin-view-users/admin-vie
 import { AdminUpdateComponent } from './components/admin-update/admin-update.component';
 import { AdminViewAdminComponent } from './components/admin-view-admin/admin-view-admin.component';
 import { AdminProfComponent } from './components/admin-prof/admin-prof.component';
+import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
+
+
 
 
 
@@ -56,7 +59,8 @@ import { AdminProfComponent } from './components/admin-prof/admin-prof.component
     AdminUpdateComponent,
     AdminViewAdminComponent,
     AdminProfComponent,
-
+    AdminProfileComponent,
+    
   ],
   imports: [
     BrowserModule,

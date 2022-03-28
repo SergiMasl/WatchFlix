@@ -14,7 +14,7 @@ export class LogInServService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getLogIn(user: {}):Observable<LocalAdmin>{
-    return this.httpClient.post<LocalAdmin>(`${this.baseURL}`, user)
+  getLogIn(admin: {}):Observable<LocalAdmin>{
+    return this.httpClient.post<LocalAdmin>(`${this.baseURL}`, admin)
   }
 }

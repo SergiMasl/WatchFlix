@@ -15,5 +15,4 @@ export class AdminDeleteComponent implements OnInit {
     ngOnInit(): void {
   
     }
-  
   }
